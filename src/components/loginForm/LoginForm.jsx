@@ -1,10 +1,8 @@
 import React,{useState} from "react";
 import styles from "./LoginForm.module.css";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import * as Yup from "yup";
 import { loginUser } from "../../api/auth";
 import { useNavigate } from "react-router";
-
 import { loginValidateSchema } from "../../utility/validator";
 
 function LoginForm() {

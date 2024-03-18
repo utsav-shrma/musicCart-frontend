@@ -25,12 +25,11 @@ export const loginUser =async ({emailOrPhone,password})=>{
 
 export const registerUser = async ({ name, email, password,phone }) => {
     try {
-      
-      const reqUrl = `${baseURL}/register`;
+      const reqUrl = `${baseUrl}/register`;
       const reqPayload = { name, email, password,phone };
       const response = await axios.post(reqUrl, reqPayload);
       return response.data;
     } catch (error) {
-      console.log(error);
+      console.log(error); 
     }
   };
