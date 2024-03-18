@@ -1,0 +1,349 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.welcomeMessage{
+    display: none;
+}
+.formContainer {
+  border: 3px solid #d9d9d9;
+
+  width: 651px;
+
+  border-radius: 23px;
+  border: 3;
+}
+
+.formInnerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  
+}
+
+
+.signHeadingContainer{
+    width: 551px;
+}
+.signHeading {
+  font-family: Roboto;
+  font-size: 49px;
+  font-weight: 400;
+  line-height: 58px;
+  letter-spacing: 0em;
+  text-align: left;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.formInput {
+  display: flex;
+  flex-direction: column;
+ 
+}
+
+.formInput label {
+  font-family: Roboto;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 26px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin-block: 5px;
+}
+
+
+
+.inputText {
+  font-family: Roboto;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 26px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: grey;
+  padding-inline: 10px;
+  width: 527px;
+  height: 57px;
+
+  border-radius: 8px;
+  border: 2;
+
+  border: 2px solid #b6b6b6;
+  margin-block: 5px;
+}
+.errorMessage {
+  color: red;
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 26px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin: 0;
+  margin-block: 5px;
+}
+.terms {
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 26px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin: 0;
+  margin-block: 10px;
+}
+
+.credentialsError{
+    width: 547px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.submitButton {
+  background: #2e0052;
+  width: 547px;
+  height: 66px;
+
+  border-radius: 8px;
+  color: white;
+  font-family: Roboto;
+  font-size: 27px;
+  font-weight: 500;
+  line-height: 32px;
+  letter-spacing: 0em;
+  text-align: center;
+  margin-block: 10px;
+  margin-top: 15px;
+}
+
+.lineContainer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  /* width: 70vw; */
+  width: 651px;
+}
+
+.line {
+  /* transform: rotate(90deg); */
+  /* width: 70vw; */
+  width: 651px;
+  margin: 0;
+  padding: 0;
+}
+
+.lineText {
+  font-family: Roboto;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 26px;
+  width: 900px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 0em;
+  z-index: 1;
+}
+
+.registerButton {
+  font-family: Roboto;
+  font-size: 23px;
+  font-weight: 400;
+  line-height: 26px;
+  letter-spacing: 0em;
+  text-align: center;
+  border: 2px solid #bdbdbd;
+  background: white;
+
+  /* width: 70vw; */
+  width: 651px;
+  height: 66px;
+
+  border-radius: 10px;
+  border: 2 px;
+  margin-bottom: 20px;
+}
+
+.signQuestionHeading{
+    display: none;
+}
+
+@media screen and (max-width: 750px) {
+  .registerButton {
+    width: 324px;
+    height: 42px;
+
+    border-radius: 6px;
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 26px;
+    letter-spacing: 0em;
+    text-align: center;
+  }
+
+  .lineText{
+    font-family: Roboto;
+font-size: 11px;
+font-weight: 400;
+line-height: 13px;
+letter-spacing: 0em;
+text-align: left;
+width: 400px;
+
+
+  }
+
+  .line{
+    width: 319px;
+  }
+
+  .lineContainer{
+    width: 319px;
+  }
+
+  .submitButton{
+    font-family: Roboto;
+font-size: 16px;
+font-weight: 500;
+line-height: 19px;
+letter-spacing: 0em;
+width: 288px;
+height: 40px;
+border-radius: 4px;   
+
+
+  }
+  .credentialsError{
+    width: 288px;
+   
+}
+
+  .terms{
+    font-family: Roboto;
+font-size: 11px;
+font-weight: 400;
+line-height: 16px;
+letter-spacing: 0em;
+text-align: center;
+
+  }
+
+  .inputText{
+    width: 273px;
+height: 34px;
+padding-inline: 5px;
+border-radius: 4px;  
+border: 2px; 
+font-family: Roboto;
+font-size: 13px;
+font-weight: 500;
+line-height: 16px;
+letter-spacing: 0em;
+text-align: left;
+border-radius: 8px;
+
+  border: 1px solid #b6b6b6;
+
+
+  }
+
+ 
+  .formInnerContainer{
+    
+    justify-content: space-evenly;
+    
+  }
+ 
+  .formInput{
+    width: 283px;
+
+
+border-radius: 4.8px;  
+border: 1.2; 
+
+
+  }
+  .formInput label{
+    font-family: Roboto;
+font-size: 13px;
+font-weight: 500;
+line-height: 16px;
+letter-spacing: 0em;
+text-align: left;
+
+
+  }
+
+  .signHeading{
+    font-family: Roboto;
+font-size: 16px;
+font-weight: 500;
+line-height: 18px;
+letter-spacing: 0em;
+text-align: left;
+
+  }
+
+  .formContainer{
+    width: 319px;
+
+
+border-radius: 5px;   
+border: 2;  
+
+  }
+
+  
+  .welcomeMessage{
+    width: 319px;
+    display:block;
+
+  }
+
+  .welcomeMessage h1{
+    font-family: Roboto;
+font-size: 31px;
+font-weight: 400;
+line-height: 36px;
+letter-spacing: 0em;
+text-align: left;
+color: #2E0052;
+
+  }
+
+  .signHeadingContainer{
+    width: 288px;
+    display: flex;
+    align-items: center;
+}
+.signQuestionHeading{
+    font-family: Roboto;
+font-size: 13px;
+font-weight: 300;
+line-height: 16px;
+letter-spacing: 0em;
+text-align: left;
+color: grey;
+margin-left: 5px;
+display: block;
+
+  }
+.errorMessage{
+    font-family: Roboto;
+font-size: 13px;
+font-weight: 500;
+line-height: 16px;
+letter-spacing: 0em;
+text-align: left;
+margin-block: 5px;
+}
+}

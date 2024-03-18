@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 51px;
+  background: #2e0052;
+}
+
+.footerText {
+  font-family: Roboto;
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 31px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: white;
+}
+
+@media screen and (max-width: 750px) {
+  .container {
+    height: 51px;
+  }
+
+  .footerText {
+    font-family: Roboto;
+    font-size: 14px;
+    line-height: 16px;
+  }
+}

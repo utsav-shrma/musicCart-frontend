@@ -1,2 +1,2 @@
-# musicCart-frontend
-Frontend for an online headphone e-commerce platform
+# Music Cart
+A react based frontend for an headphone e-commerce application

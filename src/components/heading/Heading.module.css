@@ -1,0 +1,55 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo{
+    width: 63px;
+    height: 63px;
+    padding: 5px;
+    
+    
+}
+
+.heading{
+    font-family: Roboto;
+font-size: 44px;
+font-weight: 600;
+line-height: 52px;
+letter-spacing: 0em;
+text-align: left;
+color: #2E0052;
+margin-block: 10px;
+
+
+}
+
+@media screen and (max-width: 750px) {
+    .container {
+        width: 100vw;
+        height: 48px;
+        background: #2E0052;
+        justify-content: flex-start;
+
+        
+    }
+    .logo{
+        width: 32px;
+        height: 32px;
+        padding-left: 20px;
+    }
+    .heading{
+        font-family: Roboto;
+font-size: 19px;
+font-weight: 500;
+line-height: 22px;
+letter-spacing: 0em;
+text-align: left;
+color: white;
+
+    }
+  
+   
+  }
+  
