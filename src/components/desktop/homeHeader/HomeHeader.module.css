@@ -1,0 +1,52 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+    height: 51px;
+    background: #2e0052;
+  }
+  
+  .innerContainer{
+    display: flex;
+    align-items: center;
+    margin-inline: 30px;
+    
+  }
+
+  .phoneLogo{
+  
+      width: 25.27px;
+      margin-inline: 10px;
+      height: 25.26px;
+    
+  }
+  .textFont {
+    font-family: Roboto;
+font-size: 18px;
+font-weight: 500;
+line-height: 21.09px;
+text-align: left;
+
+    color: white;
+  }
+  
+  @media screen and (max-width: 750px) {
+    .container {
+      height: 51px;
+    }
+  
+    .textFont {
+      font-family: Roboto;
+      font-size: 14px;
+      line-height: 16px;
+    }
+
+    
+  .phoneLogo{
+    width: 20px;
+    height: 20px;
+    margin-inline: 5px;
+  }
+  }
+  

@@ -1,0 +1,292 @@
+.container{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.middleContainer{
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+    width: 100vw;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.heading{
+    font-family: Roboto;
+font-size: 44.13px;
+font-weight: 600;
+line-height: 51.71px;
+text-align: left;
+
+color: #2E0052;
+margin-block: 10px;
+
+
+}
+
+.logoContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-block: 20px;
+    
+}
+
+
+.logoCartConatiner{
+    width: 90vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-block-end:20px;
+}
+.logo{
+    width: 63px;
+    height: 63px;
+    padding: 5px;
+    
+    
+}
+
+.logoMainContainer{
+   
+    display: flex;
+    align-items: center;
+    
+    /* background-color: red; */
+}
+
+.homeLink{
+    margin: 20px;
+    font-family: Roboto;
+font-size: 26.41px;
+font-weight: 400;
+line-height: 30.95px;
+text-align: left;
+
+}
+
+
+.cartContainer{
+    display: flex;
+    align-items: center;
+
+}
+
+.cartButton{
+    background: #1D7000;
+    font-family: Roboto;
+font-size: 20.23px;
+font-weight: 400;
+line-height: 26.05px;
+text-align: left;
+color: white;
+border-style: none;
+border-radius: 47px;
+
+display: flex;
+align-items: center;
+padding-inline: 20px;
+height: 40px;
+
+}
+
+.cartButton img{
+    width: 20px;
+}
+
+.accountLogo{
+    font-family: Roboto;
+    font-size: 30.98px;
+    font-weight: 500;
+    line-height: 40.99px;
+    text-align: center;
+    border: 1px solid #2E0052;
+    border-radius: 50%;
+    display: flex;
+    width:60px;
+    height: 60px;
+    align-items: center;
+    justify-content: center;
+    margin-inline-start: 30px;
+}
+
+.backButtonContainer{
+    width: 90vw;
+}
+
+.backButton{
+    font-family: Roboto;
+font-size: 20.13px;
+font-weight: 500;
+line-height: 32.96px;
+text-align: left;
+color: white;
+background: #2E0052;
+border-style: none;
+padding: 5px;
+border-radius: 14px;
+padding-inline: 20px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.productHeading{
+    font-family: Roboto;
+font-size: 25px;
+font-weight: 600;
+line-height: 42px;
+text-align: left;
+
+}
+
+.productContainer{
+    width: 90vw;
+    display: flex;
+    
+
+}
+
+.productImageContainer{
+    width: 45vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.productDescriptionContainer{
+    width:45vw;
+}
+
+.mainImage{
+    width:40vw;
+    border: 3px solid #2E0052;
+    border-radius:18px;
+}
+
+.otherImageContainer{
+    margin-block: 20px;
+    width:40vw;
+    display: grid;
+    justify-content: space-between;
+    row-gap: 20px;
+    column-gap: 20px;
+    grid-template-columns: repeat(auto-fill,11vw);
+
+}
+
+.subImage{
+    width:11vw;
+    border: 3px solid #2E0052;
+    border-radius:18px;
+}
+
+.productName{
+    font-family: Roboto;
+font-size: 40.99px;
+font-weight: 600;
+line-height: 60.93px;
+text-align: left;
+margin:0;
+
+}
+
+.ratingDiv{
+    display: flex;
+    align-items: center;
+}
+.stars{
+    color: #FFD600;
+    
+    font-family: Roboto;
+font-size: 29px;
+font-weight: 400;
+line-height: 33.98px;
+text-align: left;
+margin:0;
+
+}
+
+.price{
+    font-family: Roboto;
+font-size: 25.97px;
+font-weight: 500;
+line-height: 39.81px;
+text-align: left;
+margin:0;
+
+}
+
+.productCategory{
+    font-family: Roboto;
+font-size: 25.97px;
+font-weight: 400;
+line-height: 39.81px;
+text-align: left;
+margin:0;
+
+}
+
+.productDesc{
+    font-family: Roboto;
+font-size: 20px;
+font-weight: 400;
+line-height: 32.81px;
+text-align: left;
+
+
+}
+.stockBrandTask{
+    font-family: Roboto;
+font-size: 25.97px;
+font-weight: 500;
+line-height: 39.81px;
+text-align: left;
+margin:5px;
+
+}
+.buttonDiv{
+    width:45vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-block: 20px;
+}
+.addToCartButton{
+    font-family: Roboto;
+    font-size: 33px;
+    font-weight: 400;
+    line-height: 38.67px;
+    text-align: left;
+    background: #FFD600;
+    border-radius: 40px;
+    width:400px;
+    text-align: center;
+    border-style: none;
+    padding: 10px;
+    margin-block: 5px;
+
+}
+
+.buyNowButton{
+    font-family: Roboto;
+    font-size: 33px;
+    font-weight: 400;
+    line-height: 38.67px;
+    text-align: left;
+    background: #FFB800;
+    border-radius: 40px;
+    width:400px;
+    text-align: center;
+    border-style: none;
+    padding: 10px;
+    margin-block: 5px;
+}
