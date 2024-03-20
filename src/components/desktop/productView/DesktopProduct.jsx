@@ -63,8 +63,8 @@ function DesktopProduct() {
             <p className={styles.price}>Price  - ₹ 3,500</p>
             <p className={styles.productCategory}>Black | Over-ear headphone</p>
             <p className={styles.productDesc}>
-              About this item  <br/>
-              <ul>
+              About this item  </p>
+              <ul className={styles.productDesc}>
                 <li>Sony’s lightest Wireless Noise-cancelling headband
               ever</li>
                 <li>Up to 50-hour battery life with quick charging (3 min charge
@@ -80,7 +80,7 @@ function DesktopProduct() {
               well-balanced sound tuning</li>
               </ul>
                   
-            </p>
+            
 
             <p className={styles.stockBrandTask}><b>Available -</b> In stock</p>
             <p className={styles.stockBrandTask} ><b>Brand - </b>Sony</p>

@@ -91,7 +91,7 @@ function LoginForm() {
         
         <hr className={styles.line}></hr>
       </div>
-      <button className={styles.registerButton}>
+      <button onClick={()=>{navigate('/register');}}className={styles.registerButton}>
         Create your Musicart account
       </button>
     </div>
