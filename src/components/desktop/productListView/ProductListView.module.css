@@ -1,0 +1,9 @@
+.productGridContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 20px;
+    margin-block: 20px;
+    
+    width:90vw;
+}

@@ -5,8 +5,9 @@ import bannerLogo from "../../../assets/images/bannerLogo.png";
 import SearchBar from "../../searchBar/SearchBar";
 import listIcon from "../../../assets/icons/listIcon.png";
 import gridIcon from "../../../assets/icons/gridIcon.png";
-import Card from "../../card/Card";
 import cartLogo from '../../../assets/icons/cartLogo.png'
+import ProductGridView from "../productGridView/ProductGridView";
+import ProductListView from "../productListView/ProductListView";
 
 function ProductList() {
   return (
@@ -61,14 +62,8 @@ function ProductList() {
         <button className={styles.sortButton}>Sort by : Featured</button>
       </div>
 
-      <div className={styles.productGridContainer}>
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
-      </div>
+     {/* <ProductGridView></ProductGridView> */}
+      <ProductListView></ProductListView>
     </div>
   );
 }
