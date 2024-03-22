@@ -12,6 +12,13 @@
     background: #0066ff2b;
     width: 350px;
     height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .productImage{
+    width: 330px;
   }
   
   .infoContainer{

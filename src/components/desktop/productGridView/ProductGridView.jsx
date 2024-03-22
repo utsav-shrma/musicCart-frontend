@@ -2,15 +2,13 @@ import React from 'react'
 import styles from './ProductGridView.module.css'
 import Card from '../card/Card'
 
-function ProductGridView() {
+function ProductGridView({productArray}) {
   return (
     <div className={styles.productGridContainer}>
-    <Card></Card>
-    <Card></Card>
-    <Card></Card>
-    <Card></Card>
-    <Card></Card>
-    <Card></Card>
+      {productArray.map((product,index)=>{
+          return <Card key={index} product={product}></Card>
+      })}
+    
   </div>
   )
 }

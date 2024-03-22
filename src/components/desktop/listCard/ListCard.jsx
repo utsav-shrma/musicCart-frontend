@@ -1,17 +1,16 @@
 import React from 'react'
 import styles from './ListCard.module.css'
-function ListCard() {
+function ListCard({product}) {
   return (
     <div className={styles.container}  >
     <div className={styles.imageContainer}>
-
+    <img className={styles.productImage} src={product.images[0]}></img>
     </div>
     <div className={styles.infoContainer}>
-    <p className={styles.productTitle}>boAt Rockerz 551ANC</p>
-    <p className={styles.productPrice}>Price - ₹ 3,000</p>
-    <p className={styles.productCategory}>Blue | On-ear headphone</p>
-    <p className={styles.productDesc}>boAt Rockerz 551 ANC with Hybrid ANC, 100 HRS Playback, 40mm Drivers & ASAP Charge
-Bluetooth Headset (Stellar Black, On the Ear)</p>
+    <p className={styles.productTitle}>{product.name}</p>
+    <p className={styles.productPrice}>Price - ₹ {product.price}</p>
+    <p className={styles.productCategory}>{product.color} | {product.category}</p>
+    <p className={styles.productDesc}>{product.summary}</p>
 
     <button className={styles.detailsButton}>
         Details

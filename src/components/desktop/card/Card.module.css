@@ -10,9 +10,14 @@
 .imageContainer {
   background: #0066ff2b;
   width: 270px;
-  height: 250px;
+  height: 270px;
+  display: flex;
+    align-items: center;
+    justify-content: center;
 }
-
+.productImage{
+  width: 250px;
+}
 .productInfo {
   font-family: Roboto;
   font-size: 26.41px;
