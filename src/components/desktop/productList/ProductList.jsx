@@ -9,10 +9,13 @@ import cartLogo from "../../../assets/icons/cartLogo.png";
 import ProductGridView from "../productGridView/ProductGridView";
 import ProductListView from "../productListView/ProductListView";
 import { getAllProducts } from "../../../api/product";
+import * as Popover from '@radix-ui/react-popover';
+import { useNavigate } from "react-router-dom";
 function ProductList() {
   const [productArray, setProductArray] = useState([]);
   const [isGridView, setIsGridView] = useState(true);
   const [search, setSearch] = useState("");
+  const navigate=useNavigate();
   const [searchQuery, setSearchQuery] = useState({
     company: "",
     color: "",
@@ -20,8 +23,14 @@ function ProductList() {
     priceKey: "",
     sortKey: "",
   });
+  const userName=localStorage.getItem("userName");
   const [toggleSearch, setToggleSearch] = useState(false);
 
+  const handleLogout=()=>{
+    localStorage.setItem("token", "");
+    localStorage.setItem("userName", "");
+    navigate("/login");
+  }
   const handleSearchChange = (event) => {
     setSearch(event.target.value);
   };
@@ -61,8 +70,23 @@ function ProductList() {
             {" "}
             <img src={cartLogo}></img> &nbsp;View Cart &nbsp;0
           </button>
-          <button className={styles.accountLogo}> DR</button>{" "}
+          {/* {" "} */}
           {/**to be updated */}
+          {localStorage.getItem("token")?<Popover.Root>
+    <Popover.Trigger className={styles.accountLogo}>DR</Popover.Trigger>
+    <Popover.Portal>
+      <Popover.Content className={styles.PopoverContent}>
+        <div className={styles.popoverDiv}>
+          <p>{userName}</p>
+          <hr></hr>
+          <button onClick={handleLogout} className={styles.popoverButton} > Logout </button>
+        </div>
+        <Popover.Arrow />
+      </Popover.Content>
+    </Popover.Portal>
+  </Popover.Root>:""}
+          
+
         </div>
       </div>
 
