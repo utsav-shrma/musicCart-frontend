@@ -8,10 +8,10 @@ let axiosConfig={
     }
 }
 
-export const getAllProducts =async ()=>{
+export const getAllProducts =async ({search,company,color,category,priceKey,sortKey})=>{
    try{
-        const reqUrl=`${baseUrl}/product`;
         
+        const reqUrl=`${baseUrl}/product?category=${category}&color=${color}&priceKey=${priceKey}&company=${company}&sortKey=${sortKey}&search=${search}`;
         let response = await axios.get(reqUrl);
         return response.data;
         
