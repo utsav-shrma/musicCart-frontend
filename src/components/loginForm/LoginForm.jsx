@@ -15,7 +15,6 @@ function LoginForm() {
     const response=await loginUser({...values});
     // console.log("Form submitted with values:", values);
       if(response){
-        // console.log(response);
         localStorage.setItem("token", response.token);
         localStorage.setItem("userName", response.name);
         resetForm();

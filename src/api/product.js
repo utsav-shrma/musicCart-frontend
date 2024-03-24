@@ -23,10 +23,8 @@ export const getAllProducts =async ({search,company,color,category,priceKey,sort
 
 export const getProductbyId = async (id) => {
     try {
-      const reqUrl = `${baseUrl}/product/id/${id}`;
-      console.log("calling api");
+      const reqUrl = `${baseUrl}/product/id/${id}`; 
       const response = await axios.get(reqUrl);
-      console.log("got response");
       return response.data;
     } catch (error) {
       console.log(error); 

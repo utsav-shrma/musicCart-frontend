@@ -11,10 +11,12 @@ import ProductListView from "../productListView/ProductListView";
 import { getAllProducts } from "../../../api/product";
 import * as Popover from '@radix-ui/react-popover';
 import { useNavigate } from "react-router-dom";
+import { getCartCount } from "../../../api/cart";
 function ProductList() {
   const [productArray, setProductArray] = useState([]);
   const [isGridView, setIsGridView] = useState(true);
   const [search, setSearch] = useState("");
+  const [cartCount,setCartCount]=useState(0);
   const navigate=useNavigate();
   const [searchQuery, setSearchQuery] = useState({
     company: "",
@@ -25,6 +27,13 @@ function ProductList() {
   });
   const userName=localStorage.getItem("userName");
   const [toggleSearch, setToggleSearch] = useState(false);
+
+  const getAndSetCartCount=async ()=>{
+      let response=await getCartCount();
+      if(response){
+        setCartCount(response.cartCount);
+      }
+  }
 
   const handleLogout=()=>{
     localStorage.setItem("token", "");
@@ -50,9 +59,19 @@ function ProductList() {
       setProductArray(response);
     }
   };
+
+  useEffect(()=>{
+    getAndSetCartCount();
+  },[]);
+
   useEffect(() => {
+    getAndSetCartCount();
     setAllProducts();
+    
   }, [searchQuery, toggleSearch]);
+
+  
+
   return (
     <div className={styles.container}>
       <div className={styles.logoCartConatiner}>
@@ -68,7 +87,7 @@ function ProductList() {
         <div className={styles.cartContainer}>
           <button className={styles.cartButton}>
             {" "}
-            <img src={cartLogo}></img> &nbsp;View Cart &nbsp;0
+            <img src={cartLogo}></img> &nbsp;View Cart &nbsp;{cartCount}
           </button>
           {/* {" "} */}
           {/**to be updated */}
@@ -195,9 +214,9 @@ function ProductList() {
       </div>
 
       {isGridView ? (
-        <ProductGridView productArray={productArray}></ProductGridView>
+        <ProductGridView setCartCount={setCartCount} productArray={productArray}></ProductGridView>
       ) : (
-        <ProductListView productArray={productArray}></ProductListView>
+        <ProductListView setCartCount={setCartCount} productArray={productArray}></ProductListView>
       )}
     </div>
   );
