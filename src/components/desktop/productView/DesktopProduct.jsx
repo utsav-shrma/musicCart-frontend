@@ -7,7 +7,7 @@ import LogoHeader from "../logoHeader/LogoHeader";
 import { Context } from "../../../context";
 import { getCartCount } from "../../../api/cart";
 import { addProductToCart } from "../../../api/cart";
-
+import BackButton from "../backButton/BackButton";
 function DesktopProduct({product}) {
     const navigate=useNavigate();
     const getAndSetCartCount=async ()=>{
@@ -44,9 +44,7 @@ function DesktopProduct({product}) {
       <LogoHeader></LogoHeader>
       </Context.Provider>
 
-        <div className={styles.backButtonContainer}>
-          <button onClick={()=>{navigate('/')}}className={styles.backButton}>Back to Products</button>
-        </div>
+        <BackButton></BackButton>
 
         <div className={styles.backButtonContainer}>
           <p className={styles.productHeading}>

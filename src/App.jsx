@@ -5,6 +5,7 @@ import LoginPage from "./pages/LoginPage/LoginPage";
 import ProductListPage from "./pages/productListPage/ProductListPage";
 import ProductPage from "./pages/productPage/ProductPage";
 import { Context } from "./context";
+import CartPage from "./pages/cartPage/CartPage";
 function App() {
 
   return (
@@ -14,6 +15,7 @@ function App() {
       <Route path="/:id" element={<ProductPage></ProductPage>}></Route>
         <Route path="/login" element={<LoginPage></LoginPage>}></Route>
         <Route path="/register" element={<RegisterPage></RegisterPage>}></Route>
+        <Route path="/cart" element={<CartPage></CartPage>}></Route>
       </Routes>
     </BrowserRouter>
   );

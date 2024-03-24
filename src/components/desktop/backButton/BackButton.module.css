@@ -1,0 +1,20 @@
+.backButtonContainer{
+    width: 90vw;
+}
+
+.backButton{
+    font-family: Roboto;
+font-size: 20.13px;
+font-weight: 500;
+line-height: 32.96px;
+text-align: left;
+color: white;
+background: #2E0052;
+border-style: none;
+padding: 5px;
+border-radius: 14px;
+padding-inline: 20px;
+display: flex;
+align-items: center;
+justify-content: center;
+}

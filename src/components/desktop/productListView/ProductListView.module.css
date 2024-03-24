@@ -4,6 +4,7 @@
     align-items: flex-start;
     row-gap: 20px;
     margin-block: 20px;
+    min-height: 300px;
     
     width:90vw;
 }

@@ -1,0 +1,209 @@
+.container{
+    /* background: red; */
+    display: flex;
+    
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    
+    
+}
+
+.middleContainer{
+    /* background-color: red; */
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 2;
+}
+.cartContainer{
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.myCart{
+    font-family: Roboto;
+font-size: 25.83px;
+font-weight: 700;
+line-height: 46.68px;
+text-align: left;
+display: flex;
+justify-content: center;
+align-items: center;
+margin-bottom: 20px;
+}
+
+.myCart img{
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+}
+
+.cartInfoContainer{
+    display: flex;
+    width: 90vw;
+}
+.cartInfoContainer hr{
+    
+    margin: 0;
+    margin-block: 10px;
+    border: 1.87px solid #E1E1E1;
+   
+}
+
+.cartInfoContainer p {
+    margin: 0;
+}
+.left{
+    display: flex;
+    width: 70vw;
+    flex-direction: column;
+    
+}
+.right{
+    width: 20vw;
+}
+
+.cart{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.cart img{
+    width: 70px;
+    height: 70px;
+    border:2px solid #2E0052;
+    box-shadow: 0px 0px 7px 0px #00000040;
+    border-radius: 5px;
+    
+}
+.headingDetails{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    
+    
+}
+
+.cartInfoHeading{
+    font-family: Roboto;
+font-size: 13.93px;
+font-weight: 600;
+
+text-align: left;
+
+
+
+}
+
+.cartInfoDetail{
+    font-family: Roboto;
+    font-size: 12.93px;
+    font-weight: 400;
+    line-height: 25.97px;
+    text-align: left;
+    
+
+}
+
+.productPrice{
+    display: flex;
+}
+
+.productPriceContainer{
+    width:70vw;
+    display: flex;
+    justify-content: flex-end;
+}
+.productPrice{
+    width:50vw;
+    display: flex;
+    justify-content: space-between;
+    margin-inline-end: 10px;
+}
+.productPrice p{
+    font-family: Roboto;
+font-size: 13.93px;
+font-weight: 600;
+
+text-align: left;
+
+}
+.right{
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.priceHeading{
+    font-family: Roboto;
+font-size: 15.17px;
+font-weight: 600;
+
+text-align: left;
+
+}
+.priceDistb{
+    display: flex;
+    margin-block: 10px;
+    margin-right: 10px;
+}
+.priceDistb p{
+    font-family: Roboto;
+font-size: 10.17px;
+font-weight: 400;
+line-height: 19.46px;
+text-align: left;
+
+}
+.priceRight{
+    display: flex;
+    flex-direction: column;
+    height:200px;
+    justify-content: space-between;
+}
+.priceDistb{
+    display: flex;
+    justify-content: space-between;
+}
+
+.totalAmount{
+    font-family: Roboto;
+font-size: 12.93px;
+font-weight: 600;
+
+text-align: left;
+
+}
+.totalAmountPrice{
+    font-family: Roboto;
+font-size: 12.93px;
+font-weight: 400;
+
+text-align: left;
+
+}
+
+.placeOrderButton{
+    background: #FFD600;
+    font-family: Roboto;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-align: left;
+    border-style: none;
+   
+    border-radius: 11px;
+    padding: 5px;
+    padding-inline: 30px;
+    margin: 5px;
+    
+
+    
+}
