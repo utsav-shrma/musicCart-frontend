@@ -47,3 +47,10 @@ export const signUpFormValidation = Yup.object().shape({
     // .matches(/[`!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?~]/, "Password should contain at least one special character"),
   phone:  Yup.string().required("This field is required").matches(phoneRegExp,"Please enter a valid phone number"),
 });
+
+
+export const feedbackFormValidator = Yup.object().shape({
+  type: Yup.string().required("*Required Field").oneOf(['Feedback','Query','Bugs']),
+  feedback: Yup.string().required("*Required Field").max(300).min(3),
+  
+});

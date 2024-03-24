@@ -2,14 +2,12 @@ import React,{useEffect,useState} from "react";
 import styles from "./DesktopProduct.module.css";
 import HomeHeader from "../homeHeader/HomeHeader";
 import Footer from "../../footer/Footer";
-import logo from "../../../assets/images/musicArtLogo.png";
-import cartLogo from "../../../assets/icons/cartLogo.png";
-import headPhoneImage from "../../../assets/images/headphoneImage.png";
 import { useNavigate } from "react-router-dom";
 import LogoHeader from "../logoHeader/LogoHeader";
 import { Context } from "../../../context";
 import { getCartCount } from "../../../api/cart";
 import { addProductToCart } from "../../../api/cart";
+
 function DesktopProduct({product}) {
     const navigate=useNavigate();
     const getAndSetCartCount=async ()=>{
@@ -100,8 +98,9 @@ function DesktopProduct({product}) {
           
         </div>
       </div>
-
+      
       <Footer></Footer>
+      
     </div>
   );
 }

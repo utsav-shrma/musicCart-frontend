@@ -14,6 +14,7 @@ import { useNavigate } from "react-router-dom";
 import { getCartCount } from "../../../api/cart";
 import { Context } from "../../../context";
 import LogoHeader from "../logoHeader/LogoHeader";
+import Feedback from "../feedback/Feedback";
 function ProductList() {
   const [productArray, setProductArray] = useState([]);
   const [isGridView, setIsGridView] = useState(true);
@@ -75,6 +76,7 @@ function ProductList() {
        <Context.Provider value={{ cartCount,userName }}>
       <LogoHeader></LogoHeader>
       </Context.Provider>
+      <Feedback></Feedback>
       <div className={styles.bannerContainer}>
         <div className={styles.bannerTextContainer}>
           <h1 className={styles.bannerText}>
