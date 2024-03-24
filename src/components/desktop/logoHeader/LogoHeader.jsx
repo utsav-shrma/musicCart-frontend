@@ -1,0 +1,66 @@
+import React from 'react'
+import styles from './LogoHeader.module.css'
+import logo from "../../../assets/images/musicArtLogo.png";
+import cartLogo from "../../../assets/icons/cartLogo.png";
+import * as Popover from '@radix-ui/react-popover';
+import { useContext } from 'react';
+import { Context } from '../../../context';
+import { useNavigate } from "react-router-dom";
+function LogoHeader() {
+    const navigate=useNavigate();
+    const handleLogout=()=>{
+        localStorage.setItem("token", "");
+        localStorage.setItem("userName", "");
+        navigate("/login");
+      }
+
+      const handleCart=()=>{
+        if(localStorage.getItem('token')){
+            navigate('/register');
+            //change navigate to cart page
+        }
+        else{
+            navigate('/login');
+        }
+      }
+
+     
+    const {cartCount,userName,productName}=useContext(Context);
+  return (
+    <div className={styles.logoCartConatiner}>
+        <div className={styles.logoMainContainer}>
+          <div className={styles.logoContainer}>
+            <img className={styles.logo} src={logo}></img>
+            <p className={styles.heading}>Musicart</p>
+          </div>
+            {/* add invoice g=here when user is logged in*/}
+          <p className={styles.homeLink}>Home {productName?`/ ${productName}`:""}</p>
+        </div>
+
+        <div className={styles.cartContainer}>
+          <button onClick={handleCart} className={styles.cartButton}>
+            <img src={cartLogo}></img> &nbsp;View Cart &nbsp;{cartCount}
+          </button>
+          {/* {" "} */}
+          {/**to be updated */}
+          {localStorage.getItem("token")?<Popover.Root>
+    <Popover.Trigger className={styles.accountLogo}>DR</Popover.Trigger>
+    <Popover.Portal>
+      <Popover.Content className={styles.PopoverContent}>
+        <div className={styles.popoverDiv}>
+          <p>{userName}</p>
+          <hr></hr>
+          <button onClick={handleLogout} className={styles.popoverButton} > Logout </button>
+        </div>
+        <Popover.Arrow />
+      </Popover.Content>
+    </Popover.Portal>
+  </Popover.Root>:""}
+          
+
+        </div>
+      </div>
+  )
+}
+
+export default LogoHeader

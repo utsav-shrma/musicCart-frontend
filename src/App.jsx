@@ -4,6 +4,7 @@ import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import ProductListPage from "./pages/productListPage/ProductListPage";
 import ProductPage from "./pages/productPage/ProductPage";
+import { Context } from "./context";
 function App() {
 
   return (

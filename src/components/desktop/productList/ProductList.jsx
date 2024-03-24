@@ -12,6 +12,8 @@ import { getAllProducts } from "../../../api/product";
 import * as Popover from '@radix-ui/react-popover';
 import { useNavigate } from "react-router-dom";
 import { getCartCount } from "../../../api/cart";
+import { Context } from "../../../context";
+import LogoHeader from "../logoHeader/LogoHeader";
 function ProductList() {
   const [productArray, setProductArray] = useState([]);
   const [isGridView, setIsGridView] = useState(true);
@@ -35,11 +37,7 @@ function ProductList() {
       }
   }
 
-  const handleLogout=()=>{
-    localStorage.setItem("token", "");
-    localStorage.setItem("userName", "");
-    navigate("/login");
-  }
+ 
   const handleSearchChange = (event) => {
     setSearch(event.target.value);
   };
@@ -74,41 +72,9 @@ function ProductList() {
 
   return (
     <div className={styles.container}>
-      <div className={styles.logoCartConatiner}>
-        <div className={styles.logoMainContainer}>
-          <div className={styles.logoContainer}>
-            <img className={styles.logo} src={logo}></img>
-            <p className={styles.heading}>Musicart</p>
-          </div>
-
-          <p className={styles.homeLink}>Home</p>
-        </div>
-
-        <div className={styles.cartContainer}>
-          <button className={styles.cartButton}>
-            {" "}
-            <img src={cartLogo}></img> &nbsp;View Cart &nbsp;{cartCount}
-          </button>
-          {/* {" "} */}
-          {/**to be updated */}
-          {localStorage.getItem("token")?<Popover.Root>
-    <Popover.Trigger className={styles.accountLogo}>DR</Popover.Trigger>
-    <Popover.Portal>
-      <Popover.Content className={styles.PopoverContent}>
-        <div className={styles.popoverDiv}>
-          <p>{userName}</p>
-          <hr></hr>
-          <button onClick={handleLogout} className={styles.popoverButton} > Logout </button>
-        </div>
-        <Popover.Arrow />
-      </Popover.Content>
-    </Popover.Portal>
-  </Popover.Root>:""}
-          
-
-        </div>
-      </div>
-
+       <Context.Provider value={{ cartCount,userName }}>
+      <LogoHeader></LogoHeader>
+      </Context.Provider>
       <div className={styles.bannerContainer}>
         <div className={styles.bannerTextContainer}>
           <h1 className={styles.bannerText}>
@@ -213,11 +179,15 @@ function ProductList() {
         </div>
       </div>
 
+      <Context.Provider value={{ setCartCount }}>
+        
       {isGridView ? (
-        <ProductGridView setCartCount={setCartCount} productArray={productArray}></ProductGridView>
+        <ProductGridView  productArray={productArray}></ProductGridView>
       ) : (
-        <ProductListView setCartCount={setCartCount} productArray={productArray}></ProductListView>
+        <ProductListView  productArray={productArray}></ProductListView>
       )}
+
+</Context.Provider>
     </div>
   );
 }

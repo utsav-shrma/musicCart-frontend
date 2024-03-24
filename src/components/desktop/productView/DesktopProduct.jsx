@@ -6,33 +6,45 @@ import logo from "../../../assets/images/musicArtLogo.png";
 import cartLogo from "../../../assets/icons/cartLogo.png";
 import headPhoneImage from "../../../assets/images/headphoneImage.png";
 import { useNavigate } from "react-router-dom";
-
+import LogoHeader from "../logoHeader/LogoHeader";
+import { Context } from "../../../context";
+import { getCartCount } from "../../../api/cart";
+import { addProductToCart } from "../../../api/cart";
 function DesktopProduct({product}) {
     const navigate=useNavigate();
+    const getAndSetCartCount=async ()=>{
+        let response=await getCartCount();
+        if(response){
+          setCartCount(response.cartCount);
+        }
+    }
+    const productName=product.name;
+    const addToCart= async ()=>{
+        
+        if(localStorage.getItem('token')){
+            let response = await addProductToCart(product._id,1);
+              if(response){
+                  setCartCount(response.cartCount);
+              }
+          }
+          else{
+            navigate('/login');
+          }
+  }
 
-    
+    useEffect(()=>{
+        getAndSetCartCount();
+      },[]);
+
+    const [cartCount,setCartCount]=useState();
+    const userName=localStorage.getItem("userName");
   return (
     <div className={styles.container}>
       <HomeHeader></HomeHeader>
       <div className={styles.middleContainer}>
-        <div className={styles.logoCartConatiner}>
-          <div className={styles.logoMainContainer}>
-            <div className={styles.logoContainer}>
-              <img className={styles.logo} src={logo}></img>
-              <p className={styles.heading}>Musicart</p>
-            </div>
-
-            <p className={styles.homeLink}>Home/ {product.name} </p>
-          </div>
-
-          <div className={styles.cartContainer}>
-            <button className={styles.cartButton}>
-              {" "}
-              <img src={cartLogo}></img> &nbsp;View Cart &nbsp;0
-            </button>
-            <button className={styles.accountLogo}> DR</button> {/* set user initials*/ }
-          </div>
-        </div>
+      <Context.Provider value={{ cartCount,userName,productName }}>
+      <LogoHeader></LogoHeader>
+      </Context.Provider>
 
         <div className={styles.backButtonContainer}>
           <button onClick={()=>{navigate('/')}}className={styles.backButton}>Back to Products</button>
@@ -80,7 +92,7 @@ function DesktopProduct({product}) {
             <p className={styles.stockBrandTask}><b>Available -</b> {product.isInStock?"In stock":"Out of Stock"}</p>
             <p className={styles.stockBrandTask} ><b>Brand - </b>{product.brand}</p>
             <div className={styles.buttonDiv}>
-            <button className={styles.addToCartButton}>Add to Cart</button>
+            <button onClick={()=>{addToCart();}}className={styles.addToCartButton}>Add to Cart</button>
             <button className={styles.buyNowButton}>Buy Now</button>
             </div>
             

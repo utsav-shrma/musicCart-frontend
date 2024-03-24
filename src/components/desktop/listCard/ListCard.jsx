@@ -3,14 +3,22 @@ import styles from './ListCard.module.css'
 import { useNavigate } from 'react-router-dom'
 import cartLogo from '../../../assets/icons/cartAddIcon.png';
 import { addProductToCart } from '../../../api/cart';
-function ListCard({product,setCartCount}) {
-
+import { useContext } from 'react';
+import { Context } from '../../../context';
+function ListCard({product}) {
+    const {setCartCount}=useContext(Context);
     const navigate =useNavigate();
     const addToCart= async ()=>{
-        let response = await addProductToCart(product._id,1);
-        if(response){
-            setCartCount(response.cartCount);
-        }
+        
+        if(localStorage.getItem('token')){
+            let response = await addProductToCart(product._id,1);
+              if(response){
+                  setCartCount(response.cartCount);
+              }
+          }
+          else{
+            navigate('/login');
+          }
   }
 
   return (
