@@ -6,6 +6,7 @@ import ProductListPage from "./pages/productListPage/ProductListPage";
 import ProductPage from "./pages/productPage/ProductPage";
 import { Context } from "./context";
 import CartPage from "./pages/cartPage/CartPage";
+import CheckOutPage from "./pages/checkoutPage/CheckOutPage";
 function App() {
 
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/login" element={<LoginPage></LoginPage>}></Route>
         <Route path="/register" element={<RegisterPage></RegisterPage>}></Route>
         <Route path="/cart" element={<CartPage></CartPage>}></Route>
+        <Route path="/checkout" element={<CheckOutPage></CheckOutPage>}></Route>
       </Routes>
     </BrowserRouter>
   );

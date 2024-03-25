@@ -5,7 +5,6 @@ import Footer from '../../footer/Footer'
 import LogoHeader from '../logoHeader/LogoHeader'
 import { Context } from '../../../context'
 import BackButton from '../backButton/BackButton'
-import headphone from '../../../assets/images/headphoneImage.png'
 import bag from '../../../assets/icons/bagLogo.png'
 import { getCart } from '../../../api/cart'
 function Cart() {

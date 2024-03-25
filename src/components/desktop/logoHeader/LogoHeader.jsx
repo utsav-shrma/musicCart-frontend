@@ -6,7 +6,7 @@ import * as Popover from '@radix-ui/react-popover';
 import { useContext } from 'react';
 import { Context } from '../../../context';
 import { useNavigate } from "react-router-dom";
-function LogoHeader() {
+function LogoHeader({showCart=true,currScreen}) {
     const navigate=useNavigate();
     const handleLogout=()=>{
         localStorage.setItem("token", "");
@@ -34,13 +34,13 @@ function LogoHeader() {
             <p className={styles.heading}>Musicart</p>
           </div>
             {/* add invoice g=here when user is logged in*/}
-          <p className={styles.homeLink}>Home {productName?`/ ${productName}`:""}</p>
+          <p className={styles.homeLink}>Home {currScreen?`/ ${currScreen}`:""}</p>
         </div>
 
         <div className={styles.cartContainer}>
-          <button onClick={handleCart} className={styles.cartButton}>
+          {showCart?<button onClick={handleCart} className={styles.cartButton}>
             <img src={cartLogo}></img> &nbsp;View Cart &nbsp;{cartCount}
-          </button>
+          </button>:""}
           {/* {" "} */}
           {/**to be updated */}
           {localStorage.getItem("token")?<Popover.Root>
