@@ -7,12 +7,10 @@ import { feedbackFormValidator } from "../../../utility/validator";
 import { sendFeedback } from "../../../api/feedback";
 function Feedback() {
   const [isOpenFlag,setIsOpenFlag]=useState(false);
-  const onSubmit = async (values, { setSubmitting, resetForm }) => {
+  const onSubmit = async (values, { setSubmitting }) => {
     setSubmitting(false);
     let response = await sendFeedback({... values});
-    if(response){
-
-      resetForm();
+    if(response){;
       setIsOpenFlag(false);
     }
   };
@@ -21,7 +19,7 @@ function Feedback() {
     <div className={styles.feedbackStickyContainer}>
       <Popover.Root open={isOpenFlag} >
         <Popover.Trigger asChild >
-          <button onClick={()=>{setIsOpenFlag(true)}}>
+          <button onClick={()=>{setIsOpenFlag(!isOpenFlag)}}>
             
             <img src={icon}></img>
           </button>
@@ -37,11 +35,11 @@ function Feedback() {
                 validationSchema={feedbackFormValidator}
                 onSubmit={onSubmit}
               >
-                {({ isSubmitting,error,touched }) => (
+                {({ isSubmitting,errors,touched }) => (
                   <Form className={styles.form}>
                     <div className={styles.formInput}>
                       <label htmlFor="type">Type of feedback</label>
-                      <Field className={styles.selectInput} style={{borderColor: touched.feedback?"red":""}} as="select" name="type">
+                      <Field className={styles.selectInput} style={{borderColor: errors.type?"red":"black"}} as="select" name="type">
                         <option value="">Choose the type</option>
                         <option value="Bugs">Bugs</option>
                         <option value="Feedback">Feedback</option>
@@ -59,7 +57,7 @@ function Feedback() {
                       <label htmlFor="feedback"  >Feedback</label>
                       <Field
                       as="textarea"
-                      style={{borderColor: touched.feedback?"red":""}}
+                      style={{borderColor: errors.feedback?"red":""}}
                         className={styles.inputText}
                         type="feedback"
                         name="feedback"

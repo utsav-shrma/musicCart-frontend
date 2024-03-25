@@ -18,12 +18,14 @@
     flex-direction: column;
     align-items: center;
     flex: 2;
+
 }
 .cartContainer{
     width: 90vw;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 30px;
 }
 
 .myCart{
@@ -73,6 +75,7 @@ margin-bottom: 20px;
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
+    margin-block: 5px;
 }
 
 .cart img{
