@@ -1,0 +1,405 @@
+.checkoutContainer{
+    
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+  
+}
+
+
+.infoConatiner{
+    width: 95vw;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+
+}
+.infoConatiner p{
+    margin: 0;
+}
+
+
+.left{
+    width:65vw;
+}
+
+
+
+.info{
+    display: flex;
+    width: 65vw;
+    justify-content: space-between;
+    
+}
+
+.checkoutTitle{
+    font-family: Roboto;
+font-size: 25.83px;
+font-weight: 500;
+line-height: 46.68px;
+text-align: left;
+text-decoration: underline;
+
+}
+
+.infoTitle{
+    font-family: Roboto;
+font-size: 20.46px;
+font-weight: 500;
+line-height: 41.55px;
+text-align: left;
+color: #B52B00;
+
+
+}
+
+.nameAddress{
+    font-family: Roboto;
+font-size: 15px;
+font-weight: 400;
+line-height: 20.92px;
+text-align: left;
+color: #797979;
+
+
+}
+.detail{
+    width: 30vw;
+}
+.nameAddress textarea{ 
+    border: 1px solid #919191;
+    border-radius: 5px;
+    resize: none;
+    height: 10vh;
+    width: 30vw;
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 20.92px;
+    text-align: left;
+    color: #797979;
+}
+
+.payementMode select{
+    border: 1px solid #919191;
+    width: 30vw;
+    padding: 5px;
+    border-radius: 5px;
+    font-family: Roboto;
+font-size: 15px;
+font-weight: 400;
+text-align: right;
+color: #797979;
+text-align-last: left;
+
+}
+.payementMode select option{
+    text-align: left;
+}
+
+.imageGrid{
+    display: grid;
+    
+    grid-template-columns: repeat(auto-fill,9vw);
+    row-gap: 10px;
+    column-gap: 10px;
+}
+.imageGrid button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-style:none;
+    background-color: white;
+
+}
+.imageGrid img{
+    width:9vw;
+    margin :0;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+.productName{
+    font-family: Roboto;
+font-size: 15.93px;
+font-weight: 600;
+line-height: 25.97px;
+text-align: left;
+
+}
+
+.itemInfo{
+    margin-block: 5px;
+}
+.productColor{
+    font-family: Roboto;
+font-size: 11.79px;
+font-weight: 400;
+line-height: 10.1px;
+text-align: left;
+color: #797979;
+
+
+}
+
+.deliveryText{
+    font-family: Roboto;
+font-size: 12.79px;
+font-weight: 400;
+line-height: 20.1px;
+text-align: left;
+
+}
+
+
+.bottomDiv{
+    border: 2px solid #E1E1E1;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    margin-block: 20px;
+}
+
+.orderButton{
+    font-family: Roboto;
+font-size: 13.75px;
+font-weight: 400;
+min-width: 150px;
+text-align: left;
+background: #FFD600;
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+padding-inline:20px;
+padding-block:10px;
+border-style: none;
+border-radius: 8px;
+margin:10px;
+ margin-inline:20px;
+
+}
+
+.bottomPrice{
+    font-family: Roboto;
+font-size: 14px;
+font-weight: 600;
+
+text-align: left;
+color: #B52B00;
+
+
+}
+
+.terms{
+    font-family: Roboto;
+    font-size: 10.63px;
+    font-weight: 400;
+    
+    text-align: left;
+    
+}
+.right{
+    width:25vw;
+}
+
+.rightDiv{
+    border-radius:16px;
+    border: 2px solid #E1E1E1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+    
+    
+}
+
+
+.rightOrderButton{
+    font-family: Roboto;
+    font-size: 13.75px;
+    font-weight: 400;
+   
+    text-align: left;
+    background: #FFD600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-inline:30px;
+    padding-block:10px;
+    border-style: none;
+    border-radius: 8px;
+    margin: 10px;
+    
+     
+}
+
+.rightTerms{
+    font-family: Roboto;
+font-size: 8.75px;
+font-weight: 400;
+line-height: 12px;
+text-align: center;
+padding-inline: 10px;
+
+}
+
+.right hr{
+    width: 20vw;
+    border: 1px solid #E1E1E1;
+}
+
+.orderSummary{
+    width: 20vw;
+}
+.summaryTitle{
+    font-family: Roboto;
+font-size: 15.57px;
+font-weight: 600;
+padding-block: 5px;
+text-align: left;
+
+}
+.rightPrice{
+    margin-block: 10px;
+    display: flex;
+    width: 20vw;
+    align-items: center;
+    justify-content: space-between;
+    color: #797979;
+    font-family: Roboto;
+font-size: 12.79px;
+font-weight: 400;
+line-height: 10.1px;
+text-align: left;
+
+
+}
+
+.rightTotal{
+    width:20vw;
+    font-family: Roboto;
+font-size: 15.57px;
+font-weight: 500;
+color: #B52B00;
+display: flex;
+justify-content: space-between;
+padding-bottom: 20px;
+
+
+}
+
+@media screen and (max-width: 750px) {
+    .checkoutContainer{
+        align-items: flex-start;
+
+    }
+    .checkoutTitle{
+        font-family: Roboto;
+font-size: 26.26px;
+font-weight: 500;
+line-height: 30.77px;
+text-align: left;
+text-decoration:none;
+margin-left: 20px;
+margin-top: 0;
+
+    }
+
+    .infoTitle{
+        font-family: Roboto;
+font-size: 17.82px;
+font-weight: 500;
+line-height: 20.88px;
+text-align: left;
+margin-block:5px;
+
+
+    }
+    .info{
+        flex-direction: column;
+        margin-left:20px;
+        margin-bottom: 10px;
+    }
+
+    .left{
+        width: 100vw;
+    }
+    .infoConatiner{
+        flex-direction: column;
+        width: 100vw;
+    }
+
+    .bottomDiv{
+        display: none;
+    }
+    
+    .nameAddress p{ 
+        width:70vw;
+        margin-top: 5px;
+    }
+
+    .nameAddress textarea{ 
+        width:70vw;
+        margin-top: 5px;
+    }
+
+    
+    .payementMode select{
+        width:70vw;
+        margin-top: 10px;
+        
+    }
+
+    .imageGrid{
+        display: grid;
+        width:70vw;
+        margin-block: 10px;
+        grid-template-columns: repeat(auto-fill,63px);
+        row-gap: 10px;
+        column-gap: 10px;
+    }
+    .imageGrid button{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-style:none;
+        background-color: white;
+    
+    }
+    .imageGrid img{
+        width:63px;
+        margin :0;
+        border: 1px solid black;
+        border-radius: 5px;
+    }
+
+    .detail{
+        width:70vw;
+    }
+
+    .right{
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+    .rightDiv{
+        width: 80vw;
+    }
+
+    .rightOrderButton{
+        width:70vw;
+    }
+    
+    .rightDiv hr{
+        width:70vw;
+    }
+
+    .orderSummary,.rightPrice,.rightTotal{
+        width:70vw;
+    }
+
+}

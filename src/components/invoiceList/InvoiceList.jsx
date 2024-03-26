@@ -9,10 +9,12 @@ import { useNavigate } from 'react-router-dom'
 import Heading from '../heading/Heading';
 import BackArrow from '../mobile/backArrow/BackArrow'
 import blackIcon from '../../assets/icons/blackIcon.png'
+import MobileFooter from '../mobile/mobileFooter/MobileFooter'
 
 function InvoiceList() {
   const navigate=useNavigate();
   const [isDesktop, setIsDesktop] = useState(true);
+
   const handleResize=()=>{
     
     window.addEventListener("resize", () => setIsDesktop(window.innerWidth>breakpoint));
@@ -101,7 +103,7 @@ function InvoiceList() {
     
     </div>
 
-    {isDesktop?<Footer></Footer>:"mobile footer"}
+    {isDesktop?<Footer></Footer>:<MobileFooter></MobileFooter>}
     
     
 </div>
