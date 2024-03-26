@@ -24,10 +24,7 @@ function Cart() {
     }
 
     useEffect(()=>{
-    
-
         getCartData();
-
     },[]);
 
     

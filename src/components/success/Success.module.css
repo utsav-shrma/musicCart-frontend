@@ -1,0 +1,170 @@
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.logoContainer{
+    display: flex;
+    width: 90vw;
+    align-items: center;
+    margin-top:20px;
+}
+
+.logo{
+    width: 63px;
+    height: 63px;
+    padding: 5px;
+    
+    
+}
+
+.heading{
+    font-family: Roboto;
+font-size: 44px;
+font-weight: 600;
+line-height: 52px;
+letter-spacing: 0em;
+text-align: left;
+color: #2E0052;
+margin-block: 10px;
+
+
+}
+
+.successConatiner p{
+   
+    text-align: center;
+}
+
+.successConatiner{
+    box-shadow: 14px 16px 23px 2px #0000001C;
+    border: 2px solid #E3E3E3;
+    width: 60vw;
+    padding: 20px;
+   padding-block: 80px;
+    margin-bottom: 30px;
+    border-radius: 11px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+
+}
+
+.successHeading{
+    font-family: Roboto;
+font-size: 36px;
+font-weight: 600;
+text-align: left;
+margin: 0;
+margin-block-start: 10px;
+}
+
+.message{
+    font-family: Roboto;
+font-size: 28px;
+font-weight: 500;
+margin-block: 10px;
+text-align: left;
+color: #969696;
+padding-inline: 30px;
+
+
+}
+.successConatiner img {
+    margin-block: 20px;
+}
+.successConatiner button{
+    font-family: Roboto;
+font-size: 27px;
+font-weight: 500;
+line-height: 31.64px;
+text-align: left;
+color: white;
+background-color:  #2E0052;
+border-style: none;
+border-radius :14px;
+padding: 10px;
+padding-inline: 80px;
+margin-block-start :20px;
+text-align: center;
+
+
+}
+
+@media screen and (max-width: 750px) {
+    .logoContainer {
+        width: 100vw;
+        height: 48px;
+        background: #2E0052;
+        justify-content: flex-start;
+        margin-top:0;
+
+        
+    }
+    .logo{
+        width: 32px;
+        height: 32px;
+        padding-left: 20px;
+    }
+    .heading{
+        font-family: Roboto;
+font-size: 19px;
+font-weight: 500;
+line-height: 22px;
+letter-spacing: 0em;
+text-align: left;
+color: white;
+
+    }
+  
+    .successConatiner{
+        width:85vw;
+        margin:0;
+    }
+
+    .successConatiner img{
+        width: 85px;
+        height: 85px;
+        
+        
+    }
+
+    .successHeading{
+        font-family: Roboto;
+font-size: 18.63px;
+font-weight: 600;
+line-height: 21.83px;
+text-align: left;
+
+    }
+
+    .message{
+        font-family: Roboto;
+font-size: 18.63px;
+font-weight: 600;
+line-height: 21.83px;
+text-align: left;
+
+    }
+
+    .successConatiner button {
+        font-family: Roboto;
+font-size: 14.44px;
+font-weight: 500;
+line-height: 16.92px;
+text-align: center;
+border-radius: 4px;
+width: 75vw;
+max-width: 400px;
+    }
+   
+  }
+  

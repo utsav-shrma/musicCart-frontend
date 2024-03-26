@@ -1,0 +1,192 @@
+.container {
+  /* background: red; */
+  display: flex;
+
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.middleContainer {
+  /* background-color: red; */
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 2;
+}
+
+.backButtonContainer {
+  width: 90vw;
+}
+
+.backButton {
+  font-family: Roboto;
+  font-size: 20.13px;
+  font-weight: 500;
+  line-height: 32.96px;
+  text-align: left;
+  color: white;
+  background: #2e0052;
+  border-style: none;
+  padding: 5px;
+  border-radius: 14px;
+  padding-inline: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.invoicesContainer {
+  margin-block-end: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.invoicesContainer h1 {
+  font-family: Roboto;
+  font-size: 35.83px;
+  font-weight: 700;
+  line-height: 46.68px;
+}
+
+.eachInvoiceDiv {
+  display: flex;
+  width: 80vw;
+  align-items: center;
+  justify-content: space-between;
+}
+.left {
+  display: flex;
+}
+.details {
+  width: 20vw;
+}
+.address {
+    margin: 0;
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 400;
+    /* line-height: 42.92px; */
+    text-align: left;
+    color: #797979;
+  }
+.name {
+  margin: 0;
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 400;
+  /* line-height: 42.92px; */
+  text-align: left;
+  color: #797979;
+}
+.left img {
+  width: 70px;
+  height: 70px;
+  margin-inline-end: 10px;
+}
+
+.invoicesContainer hr {
+  border: 1.87px solid #e1e1e1;
+  width: 81vw;
+  margin-bottom: 20px;
+}
+
+.invoicesContainer button {
+  font-family: Roboto;
+  font-size: 20.13px;
+  font-weight: 500;
+  line-height: 32.96px;
+  text-align: left;
+  color: white;
+  background: #2e0052;
+  border-style: none;
+  border-radius: 10px;
+  padding: 5px;
+  padding-inline: 50px;
+}
+
+.invoiceHeading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.invoiceHeading img {
+  width: 13px;
+  height: 13px;
+  margin: 10px;
+}
+
+@media screen and (max-width: 750px) {
+  .invoiceHeading {
+    margin-bottom: 10px;
+  }
+  .invoicesContainer h1 {
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18.75px;
+    text-align: left;
+
+    margin: 0;
+  }
+
+  .left img {
+    width: 26px;
+    height: 26px;
+    margin-inline-end: 10px;
+  }
+
+  .address{
+    font-family: Roboto;
+font-size: 12px;
+font-weight: 400;
+line-height: 14.06px;
+text-align: left;
+
+
+  }
+
+  .name{
+    font-family: Roboto;
+font-size: 16px;
+font-weight: 400;
+text-align: left;
+
+  }
+  
+.invoicesContainer button{
+    font-family: Roboto;
+font-size: 12px;
+font-weight: 500;
+line-height: 14.06px;
+text-align: center;
+padding:0;
+width: 93px;
+height: 28.5px;
+border-radius: 14px;
+
+
+
+
+}
+
+.details {
+    width: 40vw;
+  }
+  
+  
+.invoicesContainer hr {
+    border: 1.87px solid #e1e1e1;
+    width: 100vw;
+    margin: 20px;
+  }
+
+  .eachInvoiceDiv{
+    margin-top: 20px;
+  }
+}

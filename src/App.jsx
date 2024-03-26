@@ -7,6 +7,8 @@ import ProductPage from "./pages/productPage/ProductPage";
 import { Context } from "./context";
 import CartPage from "./pages/cartPage/CartPage";
 import CheckOutPage from "./pages/checkoutPage/CheckOutPage";
+import SuccessPage from "./pages/successPage/SuccessPage";
+import InvoiceListPage from "./pages/InvoiceListPage/InvoiceListPage";
 function App() {
 
   return (
@@ -18,6 +20,8 @@ function App() {
         <Route path="/register" element={<RegisterPage></RegisterPage>}></Route>
         <Route path="/cart" element={<CartPage></CartPage>}></Route>
         <Route path="/checkout" element={<CheckOutPage></CheckOutPage>}></Route>
+        <Route path="/success" element={<SuccessPage></SuccessPage>}></Route>
+        <Route path="/invoice" element={<InvoiceListPage></InvoiceListPage>}></Route>
       </Routes>
     </BrowserRouter>
   );
