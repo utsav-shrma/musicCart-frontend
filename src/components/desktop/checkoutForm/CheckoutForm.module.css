@@ -7,7 +7,9 @@
   
 }
 
-
+.checkoutContainer hr{
+    border: 1.14px solid #E1E1E1
+}
 .infoConatiner{
     width: 95vw;
     display: flex;
@@ -289,6 +291,12 @@ padding-bottom: 20px;
 
 
 }
+.shuffle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
 @media screen and (max-width: 750px) {
     .checkoutContainer{
@@ -387,19 +395,41 @@ margin-block:5px;
         margin-bottom: 20px;
     }
     .rightDiv{
-        width: 80vw;
+        width: 100vw;
+        border-style: none;
+        flex-direction: column-reverse;
     }
 
     .rightOrderButton{
-        width:70vw;
+        width:80vw;
+
     }
     
     .rightDiv hr{
-        width:70vw;
+        width:100vw;
     }
 
     .orderSummary,.rightPrice,.rightTotal{
         width:70vw;
     }
+
+    .rightTerms{
+        display: none;
+    }
+    .rightTotal p{
+        font-family: Roboto;
+font-size: 19.57px;
+font-weight: 500;
+line-height: 22.93px;
+text-align: center;
+margin-top:10px;
+
+    }
+
+    .horizontal{
+        display: none;
+    }
+
+    
 
 }

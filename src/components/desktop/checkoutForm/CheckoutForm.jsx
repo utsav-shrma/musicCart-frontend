@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from "./CheckoutForm.module.css";
 import imageSample from '../../../assets/images/headphoneImage.png'
-function CheckoutForm({isInvoice=false}) {
+function CheckoutForm({isInvoice=false,isDesktop}) {
   return (
     <div className={styles.checkoutContainer}>
           <h1 className={styles.checkoutTitle}> {isInvoice?'Invoice':'Checkout'}</h1>
@@ -52,7 +52,7 @@ Monday — FREE Standard Delivery</p>
                   </div>
                 </div>
               </div>
-              <hr></hr>
+              <hr ></hr>
 
 
                 {isInvoice?"":<div className={styles.bottomDiv}>
@@ -72,9 +72,10 @@ Monday — FREE Standard Delivery</p>
                     <button className={styles.rightOrderButton} >Place your order</button>
                     <p className={styles.rightTerms} > By placing your order, you agree to Musicart privacy
 notice and conditions of use.</p>
-                    <hr ></hr></React.Fragment>}
+                   </React.Fragment>}
 
-                    
+                   <hr className={styles.horizontal} ></hr>
+                    <div className={styles.shuffle}>
                     <div className={styles.orderSummary}>
                     <p className={styles.summaryTitle}> Order Summary</p>
                     <div className={styles.rightPrice}>
@@ -87,10 +88,11 @@ notice and conditions of use.</p>
                     </div>
                     </div>
                     
-                    <hr></hr>
+                    <hr ></hr>
                     <div className={styles.rightTotal}>
                     <p> Order Total : </p>
                         <p> ₹3545.00</p>
+                    </div>
                     </div>
                 </div>
             </div>

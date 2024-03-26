@@ -46,7 +46,7 @@ function CheckoutScreen() {
           <LogoHeader showCart={false} currScreen={"Checkout"} />
         </Context.Provider>:""}
         {isDesktop?<BackButton></BackButton>:<BackArrow></BackArrow>}
-        <CheckoutForm ></CheckoutForm>
+        <CheckoutForm isDesktop={isDesktop} ></CheckoutForm>
       </div>
 
       {isDesktop?<Footer></Footer>:<MobileFooter></MobileFooter>}
