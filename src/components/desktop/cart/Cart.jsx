@@ -7,12 +7,15 @@ import { Context } from '../../../context'
 import BackButton from '../backButton/BackButton'
 import bag from '../../../assets/icons/bagLogo.png'
 import { getCart } from '../../../api/cart'
+import { useNavigate } from 'react-router-dom';
+
 function Cart() {
     const userName=localStorage.getItem("userName");
-
+    const navigate = useNavigate();
     const [cart,setCart]=useState([]);
     const [cartTotalAmount,setCartTotalAmount]=useState(0);
     const convenienceFee=45;
+    
     const getCartData=async ()=>{
 
         let response = await getCart();
@@ -21,6 +24,7 @@ function Cart() {
             setCartTotalAmount(response.totalAmount);
             // console.log(response);
         }
+        
     }
 
     useEffect(()=>{
@@ -40,6 +44,13 @@ function Cart() {
        
         setCartTotalAmount(cartTotalAmount+((newQty-prevQty)*productPrice));
     }
+
+   
+    const handleClick = () => {
+        // Navigate to a different route and pass props
+
+        navigate('/checkout', { state: { cart: cart, totalAmount: cartTotalAmount } });
+      };
 
   return (
     <div className={styles.container}>
@@ -63,6 +74,7 @@ function Cart() {
                             { 
                                 cart.map((info,index)=>{
                                         let product=info.productId;
+                                        
                                         let totalPrice=product.price*info.qty;
                                 
                                       return <div key={index} className={styles.cart}>
@@ -81,8 +93,8 @@ function Cart() {
                                           <div className={styles.headingDetails}>
                                           <p className={styles.cartInfoHeading}>Qty</p>
                                           {/* <p className={styles.cartInfoDetail}>{info.qty}</p> */}
-                                          <select  value={info.qty}onChange={()=>{handleQtyChange(event,index);}}>
-                                            {Array.from({ length: product.inventory<8?product.inventory:8 }).map((i,selectIndex)=>{
+                                          <select  value={info.qty} onChange={()=>{handleQtyChange(event,index);}}>
+                                            {Array.from({ length: product.inventory }).map((i,selectIndex)=>{
                                                     return <option key={selectIndex}  value={selectIndex+1}>{selectIndex+1}</option>
                                             })}
                                           </select>
@@ -123,11 +135,11 @@ function Cart() {
                                     <p> ₹ 0</p>
                                     <p> ₹ {convenienceFee}</p>
                                     </div>
-                                    <div className={styles.totalAmountPrice}> ₹{cartTotalAmount-convenienceFee}</div>
+                                    <div className={styles.totalAmountPrice}> ₹{cartTotalAmount+convenienceFee}</div>
                                 </div>
                             </div>
                             <div style={{width:"20vw",display:"flex",justifyContent:"center" ,marginBlock:"10px"}}>
-                            <button className={styles.placeOrderButton}>  PLACE ORDER</button>
+                            <button onClick={handleClick} className={styles.placeOrderButton}>  PLACE ORDER</button>
                             </div>
                             
                             

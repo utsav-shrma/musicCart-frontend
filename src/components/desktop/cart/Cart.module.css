@@ -50,6 +50,12 @@ margin-bottom: 20px;
     display: flex;
     width: 90vw;
 }
+
+/* .cartInfoHeading select{
+    height: 100px;
+    scroll-behavior: auto;
+
+} */
 .cartInfoContainer hr{
     
     margin: 0;

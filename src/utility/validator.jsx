@@ -54,3 +54,10 @@ export const feedbackFormValidator = Yup.object().shape({
   feedback: Yup.string().required("*Required Field").max(300).min(3),
   
 });
+
+
+export const checkoutValidator = Yup.object().shape({
+  mode: Yup.string().required("*Required Field").oneOf(['UPI','Pay on Delivery','Card']),
+  address: Yup.string().required("*Required Field").max(300).min(10,'Please enter full adress'),
+  
+});

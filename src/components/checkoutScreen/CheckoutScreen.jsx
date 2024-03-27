@@ -9,10 +9,21 @@ import CheckoutForm from "../checkoutForm/CheckoutForm";
 import BackArrow from "../mobile/backArrow/BackArrow";
 import Heading from "../heading/Heading";
 import MobileFooter from "../mobile/mobileFooter/MobileFooter";
-
+import { useLocation ,useNavigate} from 'react-router-dom';
 function CheckoutScreen() {
   const userName = localStorage.getItem("userName");
   const [isDesktop, setIsDesktop] = useState(true);
+  const location = useLocation();
+  const navigate=useNavigate();
+  let cart=[];
+  let totalAmount=0;
+    if(location.state!=null){
+     cart=location.state.cart;
+     totalAmount=location.state.totalAmount;
+    console.log(cart, totalAmount);
+    }
+    
+  
 
   const handleResize=()=>{
     
@@ -45,7 +56,7 @@ function CheckoutScreen() {
           <LogoHeader showCart={false} currScreen={"Checkout"} />
         </Context.Provider>:""}
         {isDesktop?<BackButton></BackButton>:<BackArrow></BackArrow>}
-        <CheckoutForm ></CheckoutForm>
+        <CheckoutForm cart={cart} totalAmount={totalAmount}></CheckoutForm>
       </div>
 
       {isDesktop?<Footer></Footer>:<MobileFooter></MobileFooter>}

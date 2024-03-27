@@ -14,13 +14,14 @@ export const addProductToCart = async (productId, qty) => {
             },
           };
 
-          
     const reqUrl = `${baseUrl}/cart`;
     const reqPayload = { productId, qty };
     const response = await axios.post(reqUrl, reqPayload, axiosConfig);
     if (response) {
       return response.data;
+      
     }
+
   } catch (error) {
     console.log(error);
   }

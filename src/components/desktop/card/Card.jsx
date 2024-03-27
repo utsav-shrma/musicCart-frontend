@@ -16,6 +16,9 @@ function Card({product}) {
         let response = await addProductToCart(product._id,1);
           if(response){
               setCartCount(response.cartCount);
+              if(response.isExceed){
+                window.alert("Product Amount Out of Stock");
+              }
           }
       }
       else{
