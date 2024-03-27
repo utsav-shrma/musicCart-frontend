@@ -1,0 +1,22 @@
+.container{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.middleContainer{
+    display: flex;
+    
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+@media screen and (max-width: 750px) {
+    .middleContainer{
+        overflow-y: auto;
+        overflow-x: hidden;
+      
+    }
+}

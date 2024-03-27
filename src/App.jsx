@@ -9,6 +9,8 @@ import CartPage from "./pages/cartPage/CartPage";
 import CheckOutPage from "./pages/checkoutPage/CheckOutPage";
 import SuccessPage from "./pages/successPage/SuccessPage";
 import InvoiceListPage from "./pages/InvoiceListPage/InvoiceListPage";
+import InvoicePage from "./pages/invoicePage/InvoicePage";
+
 function App() {
 
   return (
@@ -22,6 +24,7 @@ function App() {
         <Route path="/checkout" element={<CheckOutPage></CheckOutPage>}></Route>
         <Route path="/success" element={<SuccessPage></SuccessPage>}></Route>
         <Route path="/invoice" element={<InvoiceListPage></InvoiceListPage>}></Route>
+        <Route path="/invoiceid" element={<InvoicePage></InvoicePage>}></Route>
       </Routes>
     </BrowserRouter>
   );

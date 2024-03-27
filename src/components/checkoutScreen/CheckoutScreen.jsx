@@ -1,15 +1,14 @@
 import React,{useState,useEffect} from "react";
 import styles from "./CheckoutScreen.module.css";
-import HomeHeader from "../homeHeader/HomeHeader";
-import Footer from "../../footer/Footer";
-import BackButton from "../backButton/BackButton";
-import LogoHeader from "../logoHeader/LogoHeader";
-import { Context } from "../../../context";
-import imageSample from '../../../assets/images/headphoneImage.png'
+import HomeHeader from "../desktop/homeHeader/HomeHeader";
+import Footer from "../footer/Footer";
+import BackButton from "../desktop/backButton/BackButton";
+import LogoHeader from "../desktop/logoHeader/LogoHeader";
+import { Context } from "../../context";
 import CheckoutForm from "../checkoutForm/CheckoutForm";
-import BackArrow from "../../mobile/backArrow/BackArrow";
-import Heading from "../../heading/Heading";
-import MobileFooter from "../../mobile/mobileFooter/MobileFooter";
+import BackArrow from "../mobile/backArrow/BackArrow";
+import Heading from "../heading/Heading";
+import MobileFooter from "../mobile/mobileFooter/MobileFooter";
 
 function CheckoutScreen() {
   const userName = localStorage.getItem("userName");
@@ -46,7 +45,7 @@ function CheckoutScreen() {
           <LogoHeader showCart={false} currScreen={"Checkout"} />
         </Context.Provider>:""}
         {isDesktop?<BackButton></BackButton>:<BackArrow></BackArrow>}
-        <CheckoutForm isDesktop={isDesktop} ></CheckoutForm>
+        <CheckoutForm ></CheckoutForm>
       </div>
 
       {isDesktop?<Footer></Footer>:<MobileFooter></MobileFooter>}

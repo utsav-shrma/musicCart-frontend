@@ -1,9 +1,9 @@
 import React from 'react'
 import styles from "./CheckoutForm.module.css";
-import imageSample from '../../../assets/images/headphoneImage.png'
-function CheckoutForm({isInvoice=false,isDesktop}) {
+import imageSample from '../../assets/images/headphoneImage.png'
+function CheckoutForm({isInvoice=false}) {
   return (
-    <div className={styles.checkoutContainer}>
+    <div className={styles.checkoutContainer} >
           <h1 className={styles.checkoutTitle}> {isInvoice?'Invoice':'Checkout'}</h1>
           <div className={styles.infoConatiner}>
             <div className={styles.left}>
@@ -12,7 +12,7 @@ function CheckoutForm({isInvoice=false,isDesktop}) {
                 <div className={styles.detail}>
                   <div className={styles.nameAddress}>
                     <p>Name</p>
-                    <textarea value={isInvoice?"gafdgqfd":""} style={{borderStyle:isInvoice?'none':''}}></textarea>
+                    <textarea value={isInvoice?"Akash Patel 104 kk hh nagar, Lucknow Uttar Pradesh 226025":""} style={{borderStyle:isInvoice?'none':''}}></textarea>
                   </div>
                 </div>
               </div>
@@ -72,9 +72,10 @@ Monday — FREE Standard Delivery</p>
                     <button className={styles.rightOrderButton} >Place your order</button>
                     <p className={styles.rightTerms} > By placing your order, you agree to Musicart privacy
 notice and conditions of use.</p>
+<hr className={styles.horizontal} ></hr>
                    </React.Fragment>}
 
-                   <hr className={styles.horizontal} ></hr>
+                  
                     <div className={styles.shuffle}>
                     <div className={styles.orderSummary}>
                     <p className={styles.summaryTitle}> Order Summary</p>
