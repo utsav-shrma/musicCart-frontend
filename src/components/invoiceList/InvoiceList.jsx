@@ -10,11 +10,19 @@ import Heading from '../heading/Heading';
 import BackArrow from '../mobile/backArrow/BackArrow'
 import blackIcon from '../../assets/icons/blackIcon.png'
 import MobileFooter from '../mobile/mobileFooter/MobileFooter'
+import { getAllOrders } from '../../api/order'
+
 
 function InvoiceList() {
   const navigate=useNavigate();
   const [isDesktop, setIsDesktop] = useState(true);
-
+  const [orders,setOrders]=useState([]);
+  const getSetOrders=async ()=>{
+    let response=await getAllOrders();
+    if(response){
+      setOrders(response);
+    }
+  }
   const handleResize=()=>{
     
     window.addEventListener("resize", () => setIsDesktop(window.innerWidth>breakpoint));
@@ -32,11 +40,15 @@ function InvoiceList() {
   
     useEffect(() => {
       handleResize();
+      getSetOrders();
+      
       return () => {
         window.removeEventListener('resize', handleResize);
       };
       
     }, []);
+
+    useEffect(()=>{console.log(orders);},[orders])
   const userName=localStorage.getItem("userName");
 
   return (
@@ -57,48 +69,25 @@ function InvoiceList() {
 
     <div className={styles.invoiceHeading}>{!isDesktop?<img src={blackIcon}></img>:""}<h1>My Invoices</h1></div>
       
-      <div className={styles.eachInvoiceDiv}>
+      {orders.map((order,index)=>{
+        return <React.Fragment key={index}>
+          <div className={styles.eachInvoiceDiv}>
             <div className={styles.left}>
               <img src={icon}></img>
               <div className={styles.details}>
-                <p className={styles.name}>Akash Patel</p>
-                <p className={styles.address} >104 kk hh nagar, Lucknow Uttar Pradesh 226025</p>
+                <p className={styles.name}>{order.name}</p>
+                <p className={styles.address} >{order.address}</p>
                 
 
               </div>
             </div>
 
-            <button className={styles.invoiceButton}> View Invoice</button>
+            <button onClick={()=>{navigate(`/invoice/${order._id}`)}}className={styles.invoiceButton}> View Invoice</button>
       </div>
       <hr></hr>
-      <div className={styles.eachInvoiceDiv}>
-            <div className={styles.left}>
-              <img src={icon}></img>
-              <div className={styles.details}>
-                <p className={styles.name}>Akash Patel</p>
-                <p className={styles.address} >104 kk hh nagar, Lucknow Uttar Pradesh 226025</p>
-                
-
-              </div>
-            </div>
-
-            <button className={styles.invoiceButton}> View Invoice</button>
-      </div>
-      <hr></hr>
-      <div className={styles.eachInvoiceDiv}>
-            <div className={styles.left}>
-              <img src={icon}></img>
-              <div className={styles.details}>
-                <p className={styles.name}>Akash Patel</p>
-                <p className={styles.address} >104 kk hh nagar, Lucknow Uttar Pradesh 226025</p>
-                
-
-              </div>
-            </div>
-
-            <button className={styles.invoiceButton}> View Invoice</button>
-      </div>
-      <hr></hr>
+        </React.Fragment>
+      })}
+      
     </div>
     
     </div>

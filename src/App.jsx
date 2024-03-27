@@ -25,7 +25,7 @@ function App() {
         <Route path="/checkout" element={<CheckOutPage></CheckOutPage>}></Route>
         <Route path="/success" element={<SuccessPage></SuccessPage>}></Route>
         <Route path="/invoice" element={<InvoiceListPage></InvoiceListPage>}></Route>
-        <Route path="/invoiceid" element={<InvoicePage></InvoicePage>}></Route>
+        <Route path="/invoice/:id" element={<InvoicePage></InvoicePage>}></Route>
         <Route path="/404" element={<NotFound></NotFound>}></Route>
       </Routes>
     </BrowserRouter>

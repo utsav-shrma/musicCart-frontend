@@ -9,10 +9,13 @@ import CheckoutForm from "../checkoutForm/CheckoutForm";
 import BackArrow from "../mobile/backArrow/BackArrow";
 import Heading from "../heading/Heading";
 import MobileFooter from "../mobile/mobileFooter/MobileFooter";
-
+import { useParams } from 'react-router';
 function InvoiceScreen() {
     const userName = localStorage.getItem("userName");
     const [isDesktop, setIsDesktop] = useState(true);
+    const params=useParams();
+    const id=params.id;
+    
     let sample=[
         {
             "productId": {
