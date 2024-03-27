@@ -10,6 +10,7 @@ import CheckOutPage from "./pages/checkoutPage/CheckOutPage";
 import SuccessPage from "./pages/successPage/SuccessPage";
 import InvoiceListPage from "./pages/InvoiceListPage/InvoiceListPage";
 import InvoicePage from "./pages/invoicePage/InvoicePage";
+import NotFound from "./pages/notFound/NotFound";
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
         <Route path="/success" element={<SuccessPage></SuccessPage>}></Route>
         <Route path="/invoice" element={<InvoiceListPage></InvoiceListPage>}></Route>
         <Route path="/invoiceid" element={<InvoicePage></InvoicePage>}></Route>
+        <Route path="/404" element={<NotFound></NotFound>}></Route>
       </Routes>
     </BrowserRouter>
   );
