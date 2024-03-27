@@ -69,8 +69,7 @@ function Cart() {
                 <div className={styles.cartInfoContainer}>
                         <div className={styles.left}>
                             <hr></hr>
-                            
-
+                            <div className={styles.productListContainer}>
                             { 
                                 cart.map((info,index)=>{
                                         let product=info.productId;
@@ -108,6 +107,9 @@ function Cart() {
                                   </div>
                                 })
                             }
+
+                            
+                            </div>
                             <hr></hr>
                             <div className={styles.productPriceContainer}>
                             <div className={styles.productPrice}>

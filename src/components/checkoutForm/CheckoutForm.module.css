@@ -70,7 +70,7 @@ color: #797979;
 .detail{
     width: 30vw;
 }
-.nameAddress textarea{ 
+.textInput{ 
     border: 1px solid #919191;
     border-radius: 5px;
     resize: none;
@@ -84,6 +84,17 @@ color: #797979;
     color: #797979;
 }
 
+.errorMessage{
+    font-family: Inter;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 16.94px;
+  text-align: left;
+  color: #FF0000;
+  
+  
+  }
+  
 .payementMode select{
     border: 1px solid #919191;
     width: 30vw;
@@ -351,7 +362,7 @@ margin-block:5px;
         margin-top: 5px;
     }
 
-    .nameAddress textarea{ 
+    .textInput{ 
         width:70vw;
         margin-top: 5px;
     }
