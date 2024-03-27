@@ -83,6 +83,9 @@ color: #797979;
     text-align: left;
     color: #797979;
 }
+.textInput:disabled{
+    background-color: white;
+}
 
 .errorMessage{
     font-family: Inter;
@@ -94,7 +97,7 @@ color: #797979;
   
   
   }
-  
+
 .payementMode select{
     border: 1px solid #919191;
     width: 30vw;
@@ -366,6 +369,8 @@ margin-block:5px;
         width:70vw;
         margin-top: 5px;
     }
+    
+   
 
     
     .payementMode select{

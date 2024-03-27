@@ -28,6 +28,7 @@ function CheckoutForm({ isInvoice = false, totalAmount, cart }) {
                 }}
                 validationSchema={checkoutValidator}
                 onSubmit={handleSubmit}
+                disabled={isInvoice}
               >
         
           {({ isSubmitting,errors,touched }) => (
@@ -48,6 +49,7 @@ function CheckoutForm({ isInvoice = false, totalAmount, cart }) {
                         as="textarea"
                         name="address"
                         className={styles.textInput}
+                        disabled={isInvoice}
                         // value={
                         //   isInvoice
                         //     ? "Akash Patel 104 kk hh nagar, Lucknow Uttar Pradesh 226025"
@@ -68,7 +70,7 @@ function CheckoutForm({ isInvoice = false, totalAmount, cart }) {
                   <p className={styles.infoTitle}> 2. Payment method</p>
                   <div className={styles.detail}>
                     <div className={styles.payementMode}>
-                      {/*disabled style={{WebkitAppearance:'none'}}*/}
+                       
                       <Field as='select'
                         name="mode"
                         // value={isInvoice ? "UPI" : ""}
@@ -102,6 +104,7 @@ function CheckoutForm({ isInvoice = false, totalAmount, cart }) {
                         let image = product.productId.images[0];
                         return (
                           <button
+                          type="button"
                             onClick={() => {
                               setInfoIndex(index);
                             }}

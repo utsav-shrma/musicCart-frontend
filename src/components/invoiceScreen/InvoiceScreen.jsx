@@ -13,7 +13,40 @@ import MobileFooter from "../mobile/mobileFooter/MobileFooter";
 function InvoiceScreen() {
     const userName = localStorage.getItem("userName");
     const [isDesktop, setIsDesktop] = useState(true);
-  
+    let sample=[
+        {
+            "productId": {
+                "_id": "65fd70127d395fb79842ff6f",
+                "name": "Boat WH-CH720N",
+                "price": 1000,
+                "color": "Black",
+                "inventory": 20,
+                "images": [
+                    "http://localhost:3000/sony/headphoneImage.png",
+                    "http://localhost:3000/sony/headphoneImage.png",
+                    "http://localhost:3000/sony/headphoneImage.png",
+                    "http://localhost:3000/sony/headphoneImage.png"
+                ]
+            },
+            "qty": 2,
+            "_id": "66041c29db26ef215850e132"
+        },
+        {
+            "productId": {
+                "_id": "65fd70347d395fb79842ff70",
+                "name": "Sony WH-CH720N",
+                "price": 3500,
+                "color": "Black",
+                "inventory": 20,
+                "images": [
+                    "http://localhost:3000/sony/headphoneImage.png",
+                    "http://localhost:3000/sony/headphoneImage.png"
+                ]
+            },
+            "qty": 3,
+            "_id": "66041c2adb26ef215850e13a"
+        }
+    ];
     const handleResize=()=>{
       
       window.addEventListener("resize", () => setIsDesktop(window.innerWidth>breakpoint));
@@ -45,7 +78,7 @@ function InvoiceScreen() {
             <LogoHeader showCart={false} currScreen={"Checkout"} />
           </Context.Provider>:""}
           {isDesktop?<BackButton></BackButton>:<BackArrow></BackArrow>}
-          <CheckoutForm isInvoice={true} ></CheckoutForm>
+          <CheckoutForm isInvoice={true} cart={sample} totalAmount={0} ></CheckoutForm>
         </div>
   
         {isDesktop?<Footer></Footer>:<MobileFooter></MobileFooter>}

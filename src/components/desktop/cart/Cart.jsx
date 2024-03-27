@@ -22,7 +22,7 @@ function Cart() {
         if(response){
             setCart(response.cart);
             setCartTotalAmount(response.totalAmount);
-            // console.log(response);
+            console.log(response.cart);
         }
         
     }
