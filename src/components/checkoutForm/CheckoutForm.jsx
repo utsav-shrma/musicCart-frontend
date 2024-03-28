@@ -2,12 +2,16 @@ import React, { useState } from "react";
 import styles from "./CheckoutForm.module.css";
 import { checkoutValidator } from "../../utility/validator";
 import { Formik, Form, Field, ErrorMessage } from "formik";
+import { placeOrder } from "../../api/order";
+import { useNavigate } from "react-router-dom";
 
-function CheckoutForm({ isInvoice = false, totalAmount, cart }) {
+function CheckoutForm({ isInvoice = false, totalAmount, cart ,order}) {
   const deliveryCharges = 45;
+  const navigate=useNavigate();
   const userName = localStorage.getItem("userName");
   const netPrice = (totalAmount + deliveryCharges).toFixed(2);
   const [infoIndex, setInfoIndex] = useState(0);
+  
   let productInfo = {
     name: cart[infoIndex].productId.name,
     color: cart[infoIndex].productId.color,
@@ -15,16 +19,33 @@ function CheckoutForm({ isInvoice = false, totalAmount, cart }) {
     inventory: cart[infoIndex].productId.inventory,
   };
 
+  const submitOrder=async (payload)=>{
+    let response = await placeOrder(payload);
+    console.log(payload);
+    //, orderPrice, deliveryCharge, totalPrice,
+    if(response){
+      navigate('/success');
+    }
+
+  }
   const handleSubmit = (values, { setSubmitting }) => {
     console.log(values);
+    let newCart = cart.map((item) => {
+      return {
+        ...item,
+        productId: item.productId._id // Update the productId field
+      };
+    });
+    
+    submitOrder({cart:newCart,... values,deliveryCharge:deliveryCharges,orderPrice:totalAmount,totalPrice:netPrice,name:userName});
   };
   return (
 
     <div className={styles.checkoutContainer}>
         <Formik
                 initialValues={{
-                  mode: "",
-                  address: "",
+                  mode: order?order.mode:"",
+                  address: order?order.address:"",
                 }}
                 validationSchema={checkoutValidator}
                 onSubmit={handleSubmit}

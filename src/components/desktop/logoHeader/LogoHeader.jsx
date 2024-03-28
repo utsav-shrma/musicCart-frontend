@@ -16,7 +16,7 @@ function LogoHeader({showCart=true,currScreen,showUserLogo=true}) {
 
       const handleCart=()=>{
         if(localStorage.getItem('token')){
-            navigate('/register');
+            navigate('/cart');
             //change navigate to cart page
         }
         else{

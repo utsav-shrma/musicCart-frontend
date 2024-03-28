@@ -9,47 +9,23 @@ import CheckoutForm from "../checkoutForm/CheckoutForm";
 import BackArrow from "../mobile/backArrow/BackArrow";
 import Heading from "../heading/Heading";
 import MobileFooter from "../mobile/mobileFooter/MobileFooter";
+import { getOrderbyId } from '../../api/order';
 import { useParams } from 'react-router';
 function InvoiceScreen() {
     const userName = localStorage.getItem("userName");
     const [isDesktop, setIsDesktop] = useState(true);
     const params=useParams();
     const id=params.id;
+    const [order,setOrder]=useState({});
+
+    const getAndSetOrder =async ()=>{
+            let response=await getOrderbyId(id);
+            if(response){
+                setOrder(response);
+            }
+    }
     
-    let sample=[
-        {
-            "productId": {
-                "_id": "65fd70127d395fb79842ff6f",
-                "name": "Boat WH-CH720N",
-                "price": 1000,
-                "color": "Black",
-                "inventory": 20,
-                "images": [
-                    "http://localhost:3000/sony/headphoneImage.png",
-                    "http://localhost:3000/sony/headphoneImage.png",
-                    "http://localhost:3000/sony/headphoneImage.png",
-                    "http://localhost:3000/sony/headphoneImage.png"
-                ]
-            },
-            "qty": 2,
-            "_id": "66041c29db26ef215850e132"
-        },
-        {
-            "productId": {
-                "_id": "65fd70347d395fb79842ff70",
-                "name": "Sony WH-CH720N",
-                "price": 3500,
-                "color": "Black",
-                "inventory": 20,
-                "images": [
-                    "http://localhost:3000/sony/headphoneImage.png",
-                    "http://localhost:3000/sony/headphoneImage.png"
-                ]
-            },
-            "qty": 3,
-            "_id": "66041c2adb26ef215850e13a"
-        }
-    ];
+    
     const handleResize=()=>{
       
       window.addEventListener("resize", () => setIsDesktop(window.innerWidth>breakpoint));
@@ -64,9 +40,10 @@ function InvoiceScreen() {
      
   
     }
-    
+    useEffect(()=>{console.log(order);},[order]);
       useEffect(() => {
         handleResize();
+        getAndSetOrder(id);
         return () => {
           window.removeEventListener('resize', handleResize);
         };
@@ -80,8 +57,8 @@ function InvoiceScreen() {
          {isDesktop? <Context.Provider value={{ userName }}>
             <LogoHeader showCart={false} currScreen={"Checkout"} />
           </Context.Provider>:""}
-          {isDesktop?<BackButton></BackButton>:<BackArrow></BackArrow>}
-          <CheckoutForm isInvoice={true} cart={sample} totalAmount={0} ></CheckoutForm>
+          {isDesktop?<BackButton></BackButton>:<BackArrow link={"/invoice"}></BackArrow>}
+          {order.cart?<CheckoutForm isInvoice={true} cart={order.cart} totalAmount={order.orderPrice} order={{address:order.address,mode:order.mode}}  ></CheckoutForm>:""}
         </div>
   
         {isDesktop?<Footer></Footer>:<MobileFooter></MobileFooter>}

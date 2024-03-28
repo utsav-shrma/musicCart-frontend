@@ -23,10 +23,10 @@ export const getAllOrders =async ()=>{
 }
 
 
-export const placeOrder = async ({ cart, orderPrice, deliveryCharge, totalPrice, mode, address }) => {
+export const placeOrder = async ({ cart, orderPrice, deliveryCharge, totalPrice, mode, address,name }) => {
     try {
       const reqUrl = `${baseUrl}/order`;
-      const reqPayload = { cart, orderPrice, deliveryCharge, totalPrice, mode, address };
+      const reqPayload = { cart, orderPrice, deliveryCharge, totalPrice, mode, address,name };
       const response = await axios.post(reqUrl, reqPayload,axiosConfig);
       return response.data;
     } catch (error) {
