@@ -36,7 +36,7 @@ function Card({product}) {
         </div>
       
         
-        <p className={styles.productInfo}>{product.name}</p>
+        <p className={styles.heading}>{product.name}</p>
         <p className={styles.productInfo}>₹ &nbsp;{product.price}</p>
         <p className={styles.productInfo}>{product.category}</p>
         </div>

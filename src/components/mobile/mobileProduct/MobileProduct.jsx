@@ -32,7 +32,6 @@ function MobileProduct({product}) {
 
     useEffect(()=>{
         getAndSetCartCount();
-        console.log(product);
       },[]);
       
     const [cartCount,setCartCount]=useState();

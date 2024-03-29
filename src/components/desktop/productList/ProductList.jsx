@@ -9,7 +9,7 @@ import cartLogo from "../../../assets/icons/cartLogo.png";
 import ProductGridView from "../productGridView/ProductGridView";
 import ProductListView from "../productListView/ProductListView";
 import { getAllProducts } from "../../../api/product";
-import * as Popover from '@radix-ui/react-popover';
+
 import { useNavigate } from "react-router-dom";
 import { getCartCount } from "../../../api/cart";
 import { Context } from "../../../context";

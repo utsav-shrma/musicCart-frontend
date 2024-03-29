@@ -1,0 +1,195 @@
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.middleContainer{
+    display: flex;
+    flex-direction: column;
+   flex: 2;
+   align-items: center;
+   justify-content: flex-start;
+}
+
+/* banner styling */
+.bannerContainer{
+    background: linear-gradient(90deg, #7286B4 0%, #E794CE 100%);
+width:95vw;
+height: 100px;
+border-radius: 10px;
+margin-block: 10px;
+margin-top: 20px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+
+.bannerTextContainer{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 10px;
+   
+  
+}
+.bannerText{
+    font-family: Roboto;
+font-size: 20.55px;
+font-weight: 600;
+line-height: 24.09px;
+text-align: left;
+
+color: #2E0052;
+margin: 0;
+
+
+
+}
+.bannerButton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 87px;
+    height: 21.75px;
+    background: #2E0052;
+    color: white;
+    border-radius: 10.36px ;
+    font-family: Roboto;
+font-size: 9.32px;
+font-weight: 400;
+line-height: 10.92px;
+text-align: center;
+margin: 5px;
+
+    
+    
+}
+
+
+
+.bannerLogo{
+    height: 116px;
+   
+   position: relative;
+   margin-right: 10px;
+   margin-bottom: 16px;
+
+
+}
+
+
+/* banner styling */
+
+/* filter */
+.filterContainer{
+    width:90vw;
+    display: flex;
+    margin-block-end: 10px;
+  
+    width: 95vw;
+    overflow: auto;
+    -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none; 
+}
+.filterLeftContainer{
+    display: flex;
+
+}
+.filterInnerRightContainer{
+   
+    display: flex;
+    justify-content: flex-start;
+   
+
+}
+
+.filterImagebutton{
+    border-style: none;
+    background-color: white;
+}
+
+.sortButton{
+    border: 0.89px solid #E1E1E1;
+    font-family: Roboto;
+font-size: 12.21px;
+font-weight: 400;
+line-height: 14.31px;
+text-align: left;
+
+background-color: white;
+
+
+border-radius: 6px;
+
+padding-inline: 5px;
+
+
+
+
+}
+
+
+
+
+.dropDownButton{
+    font-family: Roboto;
+font-size: 13.21px;
+font-weight: 400;
+line-height: 15.48px;
+text-align: left;
+
+
+border-radius: 6px;
+border-style: none;
+background: #D9D9D9;
+ padding-block: 5px;
+padding-inline: 5px;
+margin-inline: 5px; 
+outline: none;
+
+
+
+}
+
+select option{
+    background-color: white;
+    text-align: center;
+}
+
+
+
+
+/* filter */
+
+/* grid */
+.gridContainer{
+    width: 100vw;
+    height: 70vh;
+    overflow: auto;
+    
+}
+
+
+/* @media screen and (max-height:800px)   {
+    .gridContainer{
+        width: 100vw;
+        height: 50vh;
+        overflow: auto;
+       
+    }
+} */
+
+/* @media screen and (max-height:750px) and (min-height:750)  {
+    .gridContainer{
+        width: 100vw;
+        height: 50vh;
+        overflow: auto;
+        background-color: green;
+    }
+} */

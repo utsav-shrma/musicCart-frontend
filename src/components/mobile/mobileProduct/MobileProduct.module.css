@@ -55,6 +55,7 @@ margin: 5px;
 }
 #buyButton{
     background: #FFD600;
+    margin-bottom: 20px;
 
 }
 .heading{
@@ -131,9 +132,14 @@ margin: 0;
     
 }
 
+.productContainer{
+     
+    height: 80vhvh;
+   
 
+}
 
-@media screen and (max-height: 750px) {
+/* @media screen and (max-height: 750px) {
     
     .productContainer{
      
@@ -151,4 +157,4 @@ margin: 0;
     
     }
 }
-
+ */

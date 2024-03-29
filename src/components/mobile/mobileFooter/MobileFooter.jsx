@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import cartLogo from "../../../assets/icons/mobileCart.png";
 import homeIcon from "../../../assets/icons/homeIcon.png";
 import accountIcon from "../../../assets/icons/accountIcon.png";
+import footerInvoice from '../../../assets/icons/footerInvoice.png'
 function MobileFooter() {
   return (
     <div className={styles.container}>
@@ -24,6 +25,15 @@ function MobileFooter() {
         <p id={styles.count}>0</p>
       </button>
       </div>
+
+      <div className={styles.navigation}>
+        <div className={styles.indicator}></div>
+        <button>
+          <img src={footerInvoice}></img>
+          <p>Invoice</p>
+        </button>
+      </div>
+      
       <div className={styles.navigation}>
       <div className={styles.indicator}></div>
       <button>

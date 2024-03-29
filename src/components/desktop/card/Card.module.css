@@ -3,10 +3,15 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  
-
 }
-
+.heading {
+  font-family: Roboto;
+  font-size: 26.41px;
+  font-weight: 600;
+  line-height: 30.95px;
+  text-align: left;
+  margin: 0;
+}
 .productInfo {
   font-family: Roboto;
   font-size: 26.41px;
@@ -21,24 +26,84 @@
   width: 270px;
   height: 270px;
   display: flex;
-    align-items: center;
-    justify-content: center;
-    position:relative;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
-
-.productImage{
+.productImage {
   width: 250px;
   position: absolute;
 }
-.addToCartButton{
+.addToCartButton {
   position: absolute;
-  bottom:10px;
-  right:10px;  
+  bottom: 10px;
+  right: 10px;
   background: white;
   border-radius: 50%;
   padding: 10px;
   box-shadow: 0px 0px 7px 0px #00000040;
 
   border-style: none;
+}
+
+@media screen and (max-width: 750px) {
+  .container {
+    border: 1.13px solid #cecece;
+    border-radius: 6px;
+    width: 162.04px;
+    padding-bottom: 10px;
+  }
+  .productInfo {
+    font-family: Roboto;
+    font-size: 12.3px;
+    font-weight: 500;
+    line-height: 14.41px;
+    text-align: left;
+    margin-left:10px;
+    
+  }
+  .heading {
+    font-family: Roboto;
+    font-size: 12.3px;
+    font-weight: 600;
+    line-height: 14.41px;
+    text-align: left;
+    margin-left:10px;
+    margin-top:10px;
+  }
+
+  .imageContainer {
+    background: #0066ff2b;
+    width: 162.04px;
+    height: 162.04px;
+
+    border-radius: 5.65px;
+
+  
+    
+  }
+
+  .productImage {
+    width: 130px;
+    position: absolute;
+  }
+  .addToCartButton {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: white;
+    border-radius: 50%;
+    padding: 5px;
+    box-shadow: 0px 0px 7px 0px #00000040;
+
+    border-style: none;
+  }
+
+  .addToCartButton img{
+    width: 11.99px;
+height: 11.48px;
+
+
+  }
 }
