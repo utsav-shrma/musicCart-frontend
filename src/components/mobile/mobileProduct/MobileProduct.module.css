@@ -1,0 +1,143 @@
+.container{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    overflow:hidden;
+}
+
+.middleContainer{
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+    width: 100vw;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.productContainer{
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    overflow-x:hidden;
+    height: 75vh;
+
+}
+
+.submitButton{
+    width:90vw;
+    background: #FFB800;
+    border-style: none;
+    padding-block: 10px;
+    font-family: Roboto;
+font-size: 18px;
+font-weight: 400;
+line-height: 21.09px;
+text-align: center;
+border-radius: 8px;
+margin: 5px;
+
+
+}
+#buyButton{
+    background: #FFD600;
+
+}
+.heading{
+    font-family: Roboto;
+font-size: 30.01px;
+font-weight: 600;
+line-height: 35.16px;
+text-align: left;
+margin-block:10px;
+width: 90vw;
+
+}
+
+.ratingDiv{
+    display: flex;
+    align-items: center;
+    width: 90vw;
+}
+.stars{
+    color: #FFD600;
+    
+    font-family: Roboto;
+font-size: 29px;
+font-weight: 400;
+line-height: 33.98px;
+text-align: left;
+margin:0;
+
+}
+
+.rating{
+    font-family: Roboto;
+font-size: 15.28px;
+font-weight: 400;
+line-height: 17.91px;
+text-align: left;
+
+}
+
+.summary{
+    font-family: Roboto;
+font-size: 16px;
+font-weight: 400;
+line-height: 22px;
+text-align: left;
+
+}
+.productDesc{
+    font-family: Roboto;
+font-size: 13.45px;
+font-weight: 400;
+line-height: 20px;
+text-align: left;
+width: 90vw;
+margin: 0;
+
+}
+
+.detailHeading{
+    font-family: Roboto;
+    font-size: 17.79px;
+    font-weight: 500;
+    line-height: 20.85px;
+    text-align: left;
+    
+}
+.detail{
+    font-family: Roboto;
+    font-size: 17.79px;
+    font-weight: 400;
+    line-height: 20.85px;
+    text-align: left;
+    width:90vw;
+    
+}
+
+@media screen and (max-height: 750px) {
+    
+    .productContainer{
+     
+        height: 65vh;
+    
+    }
+}
+
+@media screen and (max-height: 900px )and (min-height:750px) {
+    
+
+    .productContainer{
+     
+        height: 73vh;
+    
+    }
+}
+
