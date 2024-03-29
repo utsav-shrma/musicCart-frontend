@@ -5,7 +5,7 @@ import { getCartCount } from '../../../api/cart';
 import { addProductToCart } from '../../../api/cart';
 import SearchBar from '../../searchBar/SearchBar';
 import MobileFooter from '../mobileFooter/MobileFooter';
-
+import MobileCarousal from '../Carousal/MobileCarousal';
 import BackArrow from '../backArrow/BackArrow';
 function MobileProduct({product}) {
 
@@ -32,8 +32,9 @@ function MobileProduct({product}) {
 
     useEffect(()=>{
         getAndSetCartCount();
+        console.log(product);
       },[]);
-
+      
     const [cartCount,setCartCount]=useState();
     const userName=localStorage.getItem("userName");
 
@@ -44,12 +45,12 @@ function MobileProduct({product}) {
       
 
         <BackArrow link={"/"}></BackArrow>
+        
 
-       
-
+        
         <div className={styles.productContainer}>
           <button className={styles.submitButton}> Buy Now</button>
-          <div > carousal</div>
+          <MobileCarousal product={product}></MobileCarousal>
           <p className={styles.heading}>{product.name}</p>
           <div className={styles.ratingDiv}>
             <div className={styles.stars}> {[...Array(product.rating)].map((e, i) =>  <span  key={i}>&#9733;</span>)} </div>
