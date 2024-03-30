@@ -8,10 +8,10 @@ import styles from './MobileCarousal.module.css'
 function MobileCarousal({product}) {
     const settings = {
       dots: true,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 1,
-      slidesToScroll: 1,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1
     };
     const [temp,setTemp]=useState([]);
     

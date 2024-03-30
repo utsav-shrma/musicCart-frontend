@@ -1,7 +1,9 @@
 .sliderContainer{
-    width:85vw;
+    width:316px;
     margin-block-end: 30px;
     margin-block-start: 10px;
+    border: 2px solid black;
+    border-radius: 5px;
     
 }
 
@@ -9,8 +11,9 @@
 .image{
     width: 316.97px;
     height: 311.27px;
-    border: 1px solid black;
+    
     border-radius: 4px;
+    
     
     
 }

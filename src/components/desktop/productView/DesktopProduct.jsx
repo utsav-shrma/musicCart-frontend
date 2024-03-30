@@ -8,6 +8,7 @@ import { Context } from "../../../context";
 import { getCartCount } from "../../../api/cart";
 import { addProductToCart } from "../../../api/cart";
 import BackButton from "../backButton/BackButton";
+import DesktopCarousal from "../desktopCarousal/DesktopCarousal";
 function DesktopProduct({product}) {
     const navigate=useNavigate();
     const getAndSetCartCount=async ()=>{
@@ -53,8 +54,10 @@ function DesktopProduct({product}) {
         </div>
 
         <div className={styles.productContainer}>
-          {product.images?<div className={styles.productImageContainer}>
-            <div className={styles.mainImageContainer}>
+          {product.images?
+          <div className={styles.productImageContainer}>
+            <DesktopCarousal images={product.images}></DesktopCarousal>
+            {/* <div className={styles.mainImageContainer}>
               <img className={styles.mainImage} src={product.images[0]}></img>
             </div>
             <div className={styles.otherImageContainer}>
@@ -65,7 +68,7 @@ function DesktopProduct({product}) {
                     }
               })}
               
-            </div>
+            </div> */}
           </div>:""}
           <div className={styles.productDescriptionContainer}>
             <h1 className={styles.productName}>{product.name}</h1>
