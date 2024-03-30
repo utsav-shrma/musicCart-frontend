@@ -181,17 +181,31 @@ border-radius: 14px;
   
   
 .invoicesContainer hr {
-    border: 1.87px solid #e1e1e1;
+    border: 0.87px solid #e1e1e1;
     width: 100vw;
     margin: 20px;
   }
 
   .eachInvoiceDiv{
-    margin-top: 20px;
+    margin-top: 10px;
   }
 
   .middleContainer{
-    overflow-y: auto;
-    overflow-x: hidden;
+    /* overflow-y: auto;
+    overflow-x: hidden; */
+    height: 80vh;
   }
+
+  .invoicesContainer{
+    
+    overflow: auto;
+  }
+
+ 
+
+  .invoicesContainer {
+    margin-block-end: 10px;
+    
+  }
+  
 }
