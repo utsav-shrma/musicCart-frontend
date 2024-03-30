@@ -1,15 +1,23 @@
 import React,{useEffect,useState} from 'react'
 import styles from './MobileProduct.module.css'
-import { useNavigate } from "react-router-dom";
+import { useNavigate,useLocation } from "react-router-dom";
 import { getCartCount } from '../../../api/cart';
 import { addProductToCart } from '../../../api/cart';
 import SearchBar from '../../searchBar/SearchBar';
 import MobileFooter from '../mobileFooter/MobileFooter';
 import MobileCarousal from '../Carousal/MobileCarousal';
 import BackArrow from '../backArrow/BackArrow';
+
 function MobileProduct({product}) {
 
   const navigate=useNavigate();
+  const [search, setSearch] = useState("");
+  const handleSearchChange = (event) => {
+    setSearch(event.target.value);
+  };
+  const submitSearch = () => {
+    navigate('/', { state: { search:search} });
+  };
   const getAndSetCartCount=async ()=>{
       let response=await getCartCount();
       if(response){
@@ -54,7 +62,11 @@ const buyNowHandler = async()=>{
 
   return (
     <div className={styles.container}>
-      <SearchBar></SearchBar>
+      <SearchBar
+        handleChange={handleSearchChange}
+        value={search}
+        submitSearch={submitSearch}
+        ></SearchBar>
       <div className={styles.middleContainer}>
       
 

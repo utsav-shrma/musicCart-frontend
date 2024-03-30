@@ -4,8 +4,12 @@ import MobileFooter from '../mobileFooter/MobileFooter'
 import SearchBar from '../../searchBar/SearchBar'
 import bannerLogo from "../../../assets/images/bannerLogo.png";
 import { getAllProducts } from '../../../api/product';
+import { getCartCount } from '../../../api/cart';
 import ProductGridView from '../../desktop/productGridView/ProductGridView';
+import { Context } from "../../../context";
+import { useLocation } from "react-router-dom";
 function MobileProductList() {
+  const location=useLocation();
   const [searchQuery, setSearchQuery] = useState({
     company: "",
     color: "",
@@ -13,7 +17,6 @@ function MobileProductList() {
     priceKey: "",
     sortKey: "",
   });
-  const [toggleSearch, setToggleSearch] = useState(false);
   const [search, setSearch] = useState("");
   const [cartCount,setCartCount]=useState(0);
   const [productArray, setProductArray] = useState([]);
@@ -28,16 +31,41 @@ function MobileProductList() {
       setProductArray(response);
     }
   };
+  const getAndSetCartCount=async ()=>{
+    let response=await getCartCount();
+    if(response){
+      setCartCount(response.cartCount);
+    }
+}
 
+  
+ 
+
+  useEffect(()=>{
+    getAndSetCartCount();
+    if(location.state!=null){
+      let searchText=location.state.search;
+      setSearch(searchText);
+      console.log(searchText);
+      window.history.replaceState({}, '')
+      
+     }
+  },[]);
+
+  
+  
   useEffect(() => {
-    // getAndSetCartCount();
+    getAndSetCartCount();
     setAllProducts();
     
-  }, [searchQuery, toggleSearch]);
+  }, [searchQuery, search]);
   
   return (
     <div className={styles.container}>
-        <SearchBar></SearchBar>
+        <SearchBar
+        setSearch={setSearch}
+        
+        ></SearchBar>
         <div className={styles.middleContainer}>
 
         <div className={styles.bannerContainer}>
@@ -122,12 +150,14 @@ function MobileProductList() {
          
         </div>
         <div className={styles.gridContainer}>
+        <Context.Provider value={{ setCartCount }}>
         <ProductGridView  productArray={productArray}></ProductGridView>
+        </Context.Provider>
         </div>
         
         </div>
         <div className={styles.test}>
-        <MobileFooter></MobileFooter>
+        <MobileFooter cartCount={cartCount}></MobileFooter>
         </div>
         
     </div>

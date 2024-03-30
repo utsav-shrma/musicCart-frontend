@@ -1,10 +1,25 @@
 import React, { useState, useEffect } from 'react'
 import styles from './SearchBar.module.css'
 import searchIcon from '../../assets/icons/searchIcon.png'
-function SearchBar({handleChange,value,submitSearch}) {
+import { useNavigate } from 'react-router-dom';
+function SearchBar({setSearch}) {
   const [isDesktop, setIsDesktop] = useState(true);
+  const navigate=useNavigate();
+    const [text,setText]=useState('');
+    const handleSearchChange = (event) => {
+      setText(event.target.value);
+    };
+    const submitSearch = () => {
+      if(setSearch){
+        setSearch(text);
+      }
+      else{
+        navigate('/', { state: { search:text} });
+      }
+      
+    };
     
-    
+
   const handleResize=()=>{
     
     window.addEventListener("resize", () => setIsDesktop(window.innerWidth>breakpoint));
@@ -35,7 +50,7 @@ function SearchBar({handleChange,value,submitSearch}) {
                 <button  className={styles.searchButton}>
                     <img className={styles.searchIcon} src={searchIcon}></img>
                 </button>
-                <input onKeyPress={(e) => e.key === 'Enter' && submitSearch()} name="search" value={value} onChange={handleChange} type='text' className={styles.searchInput} placeholder={isDesktop?'Search by Product Name':"Search Musicart"}></input>
+                <input onKeyPress={(e) => e.key === 'Enter' && submitSearch(text)} name="search" value={text} onChange={handleSearchChange} type='text' className={styles.searchInput} placeholder={isDesktop?'Search by Product Name':"Search Musicart"}></input>
             </div>
     </div>
   )

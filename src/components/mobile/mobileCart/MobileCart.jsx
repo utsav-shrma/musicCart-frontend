@@ -3,7 +3,6 @@ import styles from "./MobileCart.module.css";
 import SearchBar from "../../searchBar/SearchBar";
 import MobileFooter from "../mobileFooter/MobileFooter";
 import BackArrow from "../backArrow/BackArrow";
-import sample from "../../../assets/images/headphoneImage.png";
 import { useNavigate } from "react-router-dom";
 import { getCart } from "../../../api/cart";
 function MobileCart() {
@@ -11,19 +10,20 @@ function MobileCart() {
   const [cart, setCart] = useState([]);
   const [cartTotalAmount, setCartTotalAmount] = useState(0);
   const convenienceFee = 45;
+  // const [search, setSearch] = useState("");
   
-
   const getCartData = async () => {
     let response = await getCart();
     if (response) {
       setCart(response.cart);
       setCartTotalAmount(response.totalAmount);
-      console.log(response.cart);
+  
     }
   };
 
   useEffect(() => {
     getCartData();
+ 
   }, []);
 
   const handleQtyChange = (event, index) => {
@@ -39,6 +39,10 @@ function MobileCart() {
     setCartTotalAmount(cartTotalAmount + (newQty - prevQty) * productPrice);
   };
 
+  // const submitSearch = (text) => {
+  //   navigate('/', { state: { search:text} });
+  // };
+
   const handleClick = () => {
     // Navigate to a different route and pass props
 
@@ -49,7 +53,7 @@ function MobileCart() {
 
   return (
     <div className={styles.container}>
-      <SearchBar></SearchBar>
+       <SearchBar  ></SearchBar>
       <div className={styles.middleContainer}>
         <BackArrow link={"/"}></BackArrow>
         <div className={styles.overflowContainer}>

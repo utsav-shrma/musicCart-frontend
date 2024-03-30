@@ -55,7 +55,7 @@ function CheckoutScreen() {
        {isDesktop? <Context.Provider value={{ userName }}>
           <LogoHeader showCart={false} currScreen={"Checkout"} />
         </Context.Provider>:""}
-        {isDesktop?<BackButton></BackButton>:<BackArrow></BackArrow>}
+        {isDesktop?<BackButton></BackButton>:<BackArrow link={"/cart"}></BackArrow>}
         <CheckoutForm cart={cart} totalAmount={totalAmount}></CheckoutForm>
       </div>
 

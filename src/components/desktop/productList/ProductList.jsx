@@ -9,13 +9,15 @@ import cartLogo from "../../../assets/icons/cartLogo.png";
 import ProductGridView from "../productGridView/ProductGridView";
 import ProductListView from "../productListView/ProductListView";
 import { getAllProducts } from "../../../api/product";
-
 import { useNavigate } from "react-router-dom";
 import { getCartCount } from "../../../api/cart";
 import { Context } from "../../../context";
 import LogoHeader from "../logoHeader/LogoHeader";
 import Feedback from "../feedback/Feedback";
+import { useLocation } from "react-router-dom";
+
 function ProductList() {
+  const location=useLocation();
   const [productArray, setProductArray] = useState([]);
   const [isGridView, setIsGridView] = useState(true);
   const [search, setSearch] = useState("");
@@ -28,8 +30,9 @@ function ProductList() {
     priceKey: "",
     sortKey: "",
   });
+  
   const userName=localStorage.getItem("userName");
-  const [toggleSearch, setToggleSearch] = useState(false);
+  
 
   const getAndSetCartCount=async ()=>{
       let response=await getCartCount();
@@ -38,14 +41,10 @@ function ProductList() {
       }
   }
 
- 
-  const handleSearchChange = (event) => {
-    setSearch(event.target.value);
-  };
-
   const submitSearch = () => {
-    setToggleSearch(!toggleSearch);
+    setSearch(text);
   };
+  
 
   const handleChange = (event) => {
     let newObj = { ...searchQuery };
@@ -61,13 +60,19 @@ function ProductList() {
 
   useEffect(()=>{
     getAndSetCartCount();
+    if(location.state!=null){
+      setSearch(location.state.search);
+      window.history.replaceState({}, '')
+      
+     }
   },[]);
 
   useEffect(() => {
     getAndSetCartCount();
     setAllProducts();
+  
     
-  }, [searchQuery, toggleSearch]);
+  }, [searchQuery, search]);
 
   
 
@@ -89,9 +94,8 @@ function ProductList() {
       </div>
 
       <SearchBar
-        handleChange={handleSearchChange}
-        value={search}
-        submitSearch={submitSearch}
+        setSearch={setSearch}
+        
       ></SearchBar>
       <div>
         <div className={styles.filterContainer}>
