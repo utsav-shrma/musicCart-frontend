@@ -97,15 +97,18 @@ function MobileCart() {
                         <p className={styles.total}>Total</p>
                         <p className={styles.amount}>3456</p>
                     </div>
+                    
           </div>
+       
           <hr></hr>
           <div className={styles.totalPrice}>
             <p className={styles.mainTotal}>Total Amount </p>
             <p className={styles.mainPrice}> &nbsp;&nbsp;&nbsp;₹3545</p>
           </div>
           <button className={styles.buttonContainer}>Place Order</button>
+          </div>
         </div>
-      </div>
+   
       <MobileFooter></MobileFooter>
     </div>
   );

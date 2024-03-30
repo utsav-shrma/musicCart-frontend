@@ -5,14 +5,8 @@
     justify-content: space-around;
     border: 1px solid #C8C8C8;
     margin: 0;
+   
 
-    /* experimental */
-    position: fixed;
-    z-index: 1;
-    background-color: white;
-    bottom:0;
-    
-    
 }
 
 .container button{

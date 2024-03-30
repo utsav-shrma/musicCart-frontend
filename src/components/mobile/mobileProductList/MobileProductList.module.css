@@ -170,26 +170,43 @@ select option{
 /* grid */
 .gridContainer{
     width: 100vw;
-    height: 70vh;
+    height: 63vh;
     overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
     
 }
 
 
-/* @media screen and (max-height:800px)   {
+
+
+@media   (max-height:900px)   {
     .gridContainer{
         width: 100vw;
-        height: 50vh;
+        height: 60vh;
         overflow: auto;
+        
+    }
+}
+
+@media   (max-height:816px)  {
+    .gridContainer{
+        width: 100vw;
+        height: 55vh;
+        overflow: auto;
+        
        
     }
-} */
+}
 
-/* @media screen and (max-height:750px) and (min-height:750)  {
+@media   (max-height:700px)  {
     .gridContainer{
         width: 100vw;
         height: 50vh;
         overflow: auto;
-        background-color: green;
+        
+       
     }
-} */
+}

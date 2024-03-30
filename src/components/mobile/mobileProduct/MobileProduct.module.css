@@ -22,7 +22,7 @@
     flex: 2;
     width: 100vw;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .productContainer{
@@ -34,7 +34,7 @@
     overflow-x:hidden;
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;
-    height: 75vh;
+    height: 70vh;
 
 }
 
@@ -139,22 +139,37 @@ margin: 0;
 
 }
 
-/* @media screen and (max-height: 750px) {
-    
-    .productContainer{
-     
-        height: 65vh;
-    
-    }
-}
 
-@media screen and (max-height: 900px )and (min-height:750px) {
+
+@media  (max-height: 900px ) {
     
 
     .productContainer{
      
         height: 73vh;
+        
     
     }
 }
- */
+@media  (max-height: 800px) {
+    
+    .productContainer{
+     
+        height: 70vh;
+       
+    
+    }
+}
+
+@media  (max-height: 700px) {
+    
+    .productContainer{
+     
+        height: 65vh;
+       
+    
+    }
+}
+
+
+
