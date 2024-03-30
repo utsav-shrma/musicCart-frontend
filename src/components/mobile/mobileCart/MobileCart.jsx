@@ -53,7 +53,7 @@ function MobileCart() {
 
   return (
     <div className={styles.container}>
-       <SearchBar  ></SearchBar>
+       <SearchBar doNavigate={true} ></SearchBar>
       <div className={styles.middleContainer}>
         <BackArrow link={"/"}></BackArrow>
         <div className={styles.overflowContainer}>

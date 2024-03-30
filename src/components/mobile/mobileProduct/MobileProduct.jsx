@@ -63,9 +63,7 @@ const buyNowHandler = async()=>{
   return (
     <div className={styles.container}>
       <SearchBar
-        handleChange={handleSearchChange}
-        value={search}
-        submitSearch={submitSearch}
+        doNavigate={true}
         ></SearchBar>
       <div className={styles.middleContainer}>
       

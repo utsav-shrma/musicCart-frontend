@@ -8,8 +8,12 @@ import { getCartCount } from '../../../api/cart';
 import ProductGridView from '../../desktop/productGridView/ProductGridView';
 import { Context } from "../../../context";
 import { useLocation } from "react-router-dom";
+import { useSelector, useDispatch } from 'react-redux';
+import { setGlobalSearch } from '../../../redux/utilitySlice';
 function MobileProductList() {
   const location=useLocation();
+  const globalSearch = useSelector((state) => state.utility.search);
+  const dispatch = useDispatch();
   const [searchQuery, setSearchQuery] = useState({
     company: "",
     color: "",
@@ -26,7 +30,7 @@ function MobileProductList() {
     setSearchQuery(newObj);
   };
   const setAllProducts = async () => {
-    let response = await getAllProducts({ search, ...searchQuery });
+    let response = await getAllProducts({ search:globalSearch, ...searchQuery });
     if (response) {
       setProductArray(response);
     }
@@ -43,11 +47,12 @@ function MobileProductList() {
 
   useEffect(()=>{
     getAndSetCartCount();
+    console.log(globalSearch);
     if(location.state!=null){
       let searchText=location.state.search;
-      setSearch(searchText);
-      console.log(searchText);
-      window.history.replaceState({}, '')
+      dispatch(setGlobalSearch(searchText));
+      console.log(searchText,globalSearch);
+      // window.history.replaceState({}, '')
       
      }
   },[]);
@@ -58,12 +63,12 @@ function MobileProductList() {
     getAndSetCartCount();
     setAllProducts();
     
-  }, [searchQuery, search]);
+  }, [searchQuery, globalSearch]);
   
   return (
     <div className={styles.container}>
         <SearchBar
-        setSearch={setSearch}
+        
         
         ></SearchBar>
         <div className={styles.middleContainer}>

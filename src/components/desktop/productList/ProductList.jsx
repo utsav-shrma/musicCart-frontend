@@ -15,7 +15,8 @@ import { Context } from "../../../context";
 import LogoHeader from "../logoHeader/LogoHeader";
 import Feedback from "../feedback/Feedback";
 import { useLocation } from "react-router-dom";
-
+import { useSelector, useDispatch } from 'react-redux';
+import { setGlobalSearch } from '../../../redux/utilitySlice';
 function ProductList() {
   const location=useLocation();
   const [productArray, setProductArray] = useState([]);
@@ -23,6 +24,8 @@ function ProductList() {
   const [search, setSearch] = useState("");
   const [cartCount,setCartCount]=useState(0);
   const navigate=useNavigate();
+  const globalSearch = useSelector((state) => state.utility.search);
+  const dispatch = useDispatch();
   const [searchQuery, setSearchQuery] = useState({
     company: "",
     color: "",
@@ -52,7 +55,7 @@ function ProductList() {
     setSearchQuery(newObj);
   };
   const setAllProducts = async () => {
-    let response = await getAllProducts({ search, ...searchQuery });
+    let response = await getAllProducts({ search:globalSearch, ...searchQuery });
     if (response) {
       setProductArray(response);
     }
@@ -61,8 +64,9 @@ function ProductList() {
   useEffect(()=>{
     getAndSetCartCount();
     if(location.state!=null){
-      setSearch(location.state.search);
-      window.history.replaceState({}, '')
+      
+      dispatch(setGlobalSearch(location.state.search));
+      // window.history.replaceState({}, '')
       
      }
   },[]);
@@ -72,7 +76,7 @@ function ProductList() {
     setAllProducts();
   
     
-  }, [searchQuery, search]);
+  }, [searchQuery, globalSearch]);
 
   
 

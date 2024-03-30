@@ -2,19 +2,22 @@ import React, { useState, useEffect } from 'react'
 import styles from './SearchBar.module.css'
 import searchIcon from '../../assets/icons/searchIcon.png'
 import { useNavigate } from 'react-router-dom';
-function SearchBar({setSearch}) {
+import { useSelector, useDispatch } from 'react-redux';
+import { setGlobalSearch } from '../../redux/utilitySlice';
+function SearchBar({doNavigate=false}) {
   const [isDesktop, setIsDesktop] = useState(true);
   const navigate=useNavigate();
+  const globalSearch = useSelector((state) => state.search);
+  const dispatch = useDispatch();
     const [text,setText]=useState('');
     const handleSearchChange = (event) => {
       setText(event.target.value);
     };
     const submitSearch = () => {
-      if(setSearch){
-        setSearch(text);
-      }
-      else{
-        navigate('/', { state: { search:text} });
+      dispatch(setGlobalSearch(text));
+      console.log(globalSearch,text);
+      if(doNavigate){
+        navigate('/');  
       }
       
     };
