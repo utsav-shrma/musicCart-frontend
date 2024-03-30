@@ -18,6 +18,7 @@ function DesktopProduct({product}) {
         }
     }
     const productName=product.name;
+   
     const addToCart= async ()=>{
         
         if(localStorage.getItem('token')){
@@ -31,6 +32,21 @@ function DesktopProduct({product}) {
           }
   }
 
+
+
+  const buyNowHandler = async()=>{
+    if(localStorage.getItem('token')){
+      let response = await addProductToCart(product._id,1);
+        if(response){
+            // setCartCount(response.cartCount);
+            navigate('/cart');
+        }
+    }
+    else{
+      navigate('/login');
+    }
+      
+  }
     useEffect(()=>{
         getAndSetCartCount();
       },[]);
@@ -92,7 +108,7 @@ function DesktopProduct({product}) {
             <p className={styles.stockBrandTask} ><b>Brand - </b>{product.brand}</p>
             <div className={styles.buttonDiv}>
             <button onClick={()=>{addToCart();}}className={styles.addToCartButton}>Add to Cart</button>
-            <button className={styles.buyNowButton}>Buy Now</button>
+            <button onClick={buyNowHandler}className={styles.buyNowButton}>Buy Now</button>
             </div>
             
           </div>

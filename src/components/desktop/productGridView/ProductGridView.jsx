@@ -8,15 +8,7 @@ function ProductGridView({productArray}) {
       {productArray.map((product,index)=>{
           return <Card key={index}  product={product}></Card>
       })}
-      {productArray.map((product,index)=>{
-          return <Card key={index}  product={product}></Card>
-      })}
-      {productArray.map((product,index)=>{
-          return <Card key={index}  product={product}></Card>
-      })}
-      {productArray.map((product,index)=>{
-          return <Card key={index}  product={product}></Card>
-      })}
+      
     
   </div>
   )

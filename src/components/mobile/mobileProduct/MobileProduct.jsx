@@ -10,32 +10,47 @@ import BackArrow from '../backArrow/BackArrow';
 function MobileProduct({product}) {
 
   const navigate=useNavigate();
-    const getAndSetCartCount=async ()=>{
-        let response=await getCartCount();
-        if(response){
-          setCartCount(response.cartCount);
-        }
-    }
-    const productName=product.name;
-    const addToCart= async ()=>{
-        
-        if(localStorage.getItem('token')){
-            let response = await addProductToCart(product._id,1);
-              if(response){
-                  setCartCount(response.cartCount);
-              }
-          }
-          else{
-            navigate('/login');
-          }
+  const getAndSetCartCount=async ()=>{
+      let response=await getCartCount();
+      if(response){
+        setCartCount(response.cartCount);
+      }
   }
-
-    useEffect(()=>{
-        getAndSetCartCount();
-      },[]);
+  const productName=product.name;
+ 
+  const addToCart= async ()=>{
       
-    const [cartCount,setCartCount]=useState();
-    const userName=localStorage.getItem("userName");
+      if(localStorage.getItem('token')){
+          let response = await addProductToCart(product._id,1);
+            if(response){
+                setCartCount(response.cartCount);
+            }
+        }
+        else{
+          navigate('/login');
+        }
+}
+
+
+
+const buyNowHandler = async()=>{
+  if(localStorage.getItem('token')){
+    let response = await addProductToCart(product._id,1);
+      if(response){
+          // setCartCount(response.cartCount);
+          navigate('/cart');
+      }
+  }
+  else{
+    navigate('/login');
+  }
+    
+}
+  useEffect(()=>{
+      getAndSetCartCount();
+    },[]);
+
+  const [cartCount,setCartCount]=useState();
 
   return (
     <div className={styles.container}>
@@ -48,7 +63,7 @@ function MobileProduct({product}) {
 
         
         <div className={styles.productContainer}>
-          <button className={styles.submitButton}> Buy Now</button>
+          <button onClick={buyNowHandler} className={styles.submitButton}> Buy Now</button>
           <MobileCarousal product={product}></MobileCarousal>
           <p className={styles.heading}>{product.name}</p>
           <div className={styles.ratingDiv}>
@@ -66,14 +81,14 @@ function MobileProduct({product}) {
             <p className={styles.detail}> <span className={styles.detailHeading}> Brand -</span> {product.brand}</p>
             </div>
 
-            <button id={styles.buyButton}className={styles.submitButton}> Buy Now</button>
+            <button onClick={buyNowHandler} id={styles.buyButton}className={styles.submitButton}> Buy Now</button>
           
-            <button className={styles.submitButton}>  Add to cart</button>
+            <button onClick={addToCart} className={styles.submitButton}>  Add to cart</button>
           
         </div>
       </div>
       
-      <MobileFooter></MobileFooter>
+      <MobileFooter cartCount={cartCount}></MobileFooter>
       
     </div>
   )

@@ -170,11 +170,10 @@ select option{
 /* grid */
 .gridContainer{
     width: 100vw;
-    height: 63vh;
+    height: 40vh;
     overflow: auto;
     display: flex;
-    align-items: center;
-    justify-content: center;
+  
     
     
 }
