@@ -65,7 +65,7 @@ function MobileCart() {
        <SearchBar doNavigate={true} ></SearchBar>
       <div className={styles.middleContainer}>
         <BackArrow link={"/"}></BackArrow>
-        <div className={styles.overflowContainer}>
+        {cart.length>0? <div className={styles.overflowContainer}>
           <div className={styles.cartContainer}>
             {cart.map((info, index) => {
               let product = info.productId;
@@ -122,7 +122,7 @@ function MobileCart() {
             <p className={styles.mainPrice}> &nbsp;&nbsp;&nbsp;₹{cartTotalAmount+convenienceFee}</p>
           </div>
           <button onClick={handleClick}className={styles.buttonContainer}>Place Order</button>
-        </div>
+        </div>:<div className={styles.emptyCart}><h1> Cart is Empty !</h1></div>}
       </div>
 
       <MobileFooter cartCount={cartCount}></MobileFooter>

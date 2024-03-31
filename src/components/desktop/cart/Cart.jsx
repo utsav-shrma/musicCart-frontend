@@ -64,9 +64,10 @@ function Cart() {
         <div className={styles.cartContainer}>
                 <div className={styles.myCart}>
                     <img src={bag}></img>
-                    My Cart
+                    {cart.length>0?"My Cart":"Cart Is Empty !"}
                 </div>
-                <div className={styles.cartInfoContainer}>
+                {cart.length>0?<React.Fragment>
+                    <div className={styles.cartInfoContainer}>
                         <div className={styles.left}>
                             <hr></hr>
                             <div className={styles.productListContainer}>
@@ -149,6 +150,7 @@ function Cart() {
                             
                         </div>
                 </div>
+                </React.Fragment>:""}
         </div>
 
         </div>

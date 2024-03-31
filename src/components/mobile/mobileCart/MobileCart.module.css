@@ -155,7 +155,21 @@
     margin-block: 5px;
 }
 
+.emptyCart{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2E0052;
 
+}
+.emptyCart h1{
+  font-family: Roboto;
+font-size: 30.13px;
+font-weight: 600;
+line-height: 51.71px;
+text-align: left;
+
+}
 
 @media screen and (max-height:800px) {
   .middleContainer {
