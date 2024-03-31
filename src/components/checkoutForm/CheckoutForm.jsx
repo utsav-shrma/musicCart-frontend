@@ -24,7 +24,8 @@ function CheckoutForm({ isInvoice = false, totalAmount, cart ,order}) {
     console.log(payload);
     //, orderPrice, deliveryCharge, totalPrice,
     if(response){
-      navigate('/success');
+      window.history.replaceState({}, '');
+      navigate('/success', { state: { isDirected:true } });
     }
 
   }

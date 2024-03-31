@@ -12,8 +12,8 @@ function MobileFooter({cartCount}) {
   const navigate=useNavigate();
   const currentLinkAddress = location.pathname;
   const handleLogout=()=>{
-    localStorage.setItem("token", "");
-    localStorage.setItem("userName", "");
+    localStorage.removeItem("token");
+    localStorage.removeItem("userName");
     navigate("/login");
   }
   return (

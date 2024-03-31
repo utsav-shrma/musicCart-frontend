@@ -92,11 +92,13 @@ function Cart() {
                                           <div className={styles.headingDetails}>
                                           <p className={styles.cartInfoHeading}>Qty</p>
                                           {/* <p className={styles.cartInfoDetail}>{info.qty}</p> */}
-                                          <select  value={info.qty} onChange={()=>{handleQtyChange(event,index);}}>
-                                            {Array.from({ length: product.inventory }).map((i,selectIndex)=>{
+                                          <div  className={styles.qtyDropContainer}>
+                                          <select  className={styles.qtyDrop} value={info.qty} onChange={()=>{handleQtyChange(event,index);}}>
+                                            {Array.from({ length: info.qty>8?info.qty:8 }).map((i,selectIndex)=>{
                                                     return <option key={selectIndex}  value={selectIndex+1}>{selectIndex+1}</option>
                                             })}
                                           </select>
+                                          </div>
                                           </div>
       
                                           <div className={styles.headingDetails}>

@@ -11,18 +11,16 @@ import Heading from "../heading/Heading";
 import MobileFooter from "../mobile/mobileFooter/MobileFooter";
 import { useLocation ,useNavigate} from 'react-router-dom';
 import { getCartCount } from "../../api/cart";
+
 function CheckoutScreen() {
   const userName = localStorage.getItem("userName");
   const [isDesktop, setIsDesktop] = useState(true);
   const location = useLocation();
   const navigate=useNavigate();
-  let cart=[];
-  let totalAmount=0;
-    if(location.state!=null){
-     cart=location.state.cart;
-     totalAmount=location.state.totalAmount;
-    console.log(cart, totalAmount);
-    }
+  let [cart,setCart]=useState([]);
+  let [totalAmount,setTotalAmount]=useState(0);
+ 
+    
     
     const [cartCount,setCartCount]=useState(0);
   
@@ -51,9 +49,21 @@ function CheckoutScreen() {
   
     useEffect(() => {
       handleResize();
-      getAndSetCartCount();
-      return () => {
+      if(location.state!=null){
+        let stateCart=location.state.cart;
+        let total=location.state.totalAmount;
+        getAndSetCartCount();
+        setCart(stateCart);
+        setTotalAmount(total);
+        
+       }
+       else{
+         navigate('/404');
+       }
+     
+       return () => {
         window.removeEventListener('resize', handleResize);
+        
       };
       
     }, []);
@@ -66,7 +76,7 @@ function CheckoutScreen() {
           <LogoHeader showCart={false} currScreen={"Checkout"} />
         </Context.Provider>:""}
         {isDesktop?<BackButton></BackButton>:<BackArrow link={"/cart"}></BackArrow>}
-        <CheckoutForm cart={cart} totalAmount={totalAmount}></CheckoutForm>
+        {cart.length!=0?<CheckoutForm cart={cart} totalAmount={totalAmount}></CheckoutForm>:""}
       </div>
 
       {isDesktop?<Footer></Footer>:<MobileFooter cartCount={cartCount}></MobileFooter>}

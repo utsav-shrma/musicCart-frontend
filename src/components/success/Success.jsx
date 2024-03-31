@@ -5,9 +5,12 @@ import logo from '../../assets/images/musicArtLogo.png'
 import confetti from '../../assets/images/confetti.png'
 import { useNavigate } from 'react-router-dom'
 import MobileFooter from '../mobile/mobileFooter/MobileFooter'
+import { useLocation } from 'react-router-dom'
+
 function Success() {
   const [isDesktop, setIsDesktop] = useState(true);
-  
+  const location=useLocation();
+
   const handleResize=()=>{
     
     window.addEventListener("resize", () => setIsDesktop(window.innerWidth>breakpoint));
@@ -25,8 +28,14 @@ function Success() {
   
     useEffect(() => {
       handleResize();
+      console.log(location.state);
+      if(location.state==null){
+          navigate('/404');
+       }
+       
       return () => {
         window.removeEventListener('resize', handleResize);
+        
       };
       
     }, []);
@@ -45,7 +54,7 @@ function Success() {
         <img src={confetti}></img>
         <p className={styles.successHeading} >Order is placed successfully!</p>
         <p className={styles.message}>You  will be receiving a confirmation email with order details</p>
-        <button onClick={()=>{navigate('/');}}> Go back to Home page </button>
+        <button onClick={()=>{window.history.replaceState({}, ''); navigate('/');}}> Go back to Home page </button>
       </div>
       {isDesktop?<Footer></Footer>:<MobileFooter cartCount={0}></MobileFooter>}
       

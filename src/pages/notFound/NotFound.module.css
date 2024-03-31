@@ -1,0 +1,18 @@
+.container{
+    width: 100vw;
+    height:100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container h1{
+    font-family: Roboto;
+font-size: 44.13px;
+font-weight: 600;
+line-height: 51.71px;
+text-align: left;
+
+color: #2E0052;
+
+}

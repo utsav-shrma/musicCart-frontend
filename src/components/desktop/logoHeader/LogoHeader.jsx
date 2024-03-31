@@ -9,8 +9,8 @@ import { useNavigate } from "react-router-dom";
 function LogoHeader({showCart=true,currScreen,showUserLogo=true}) {
     const navigate=useNavigate();
     const handleLogout=()=>{
-        localStorage.setItem("token", "");
-        localStorage.setItem("userName", "");
+        localStorage.removeItem("token");
+        localStorage.removeItem("userName");
         navigate("/login");
       }
 
