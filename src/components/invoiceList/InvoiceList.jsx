@@ -1,4 +1,4 @@
-import React,{useState,useEffect,useWin} from 'react'
+import React,{useState,useEffect} from 'react'
 import styles from './InvoiceList.module.css'
 import HomeHeader from '../desktop/homeHeader/HomeHeader'
 import Footer from '../footer/Footer'
@@ -11,6 +11,7 @@ import BackArrow from '../mobile/backArrow/BackArrow'
 import blackIcon from '../../assets/icons/blackIcon.png'
 import MobileFooter from '../mobile/mobileFooter/MobileFooter'
 import { getAllOrders } from '../../api/order'
+import { getCartCount } from '../../api/cart'
 
 
 function InvoiceList() {
@@ -23,6 +24,14 @@ function InvoiceList() {
       setOrders(response);
     }
   }
+  const [cartCount,setCartCount]=useState(0);
+  const getAndSetCartCount=async ()=>{
+    let response=await getCartCount();
+    if(response){
+      setCartCount(response.cartCount);
+    }
+}
+
   const handleResize=()=>{
     
     window.addEventListener("resize", () => setIsDesktop(window.innerWidth>breakpoint));
@@ -41,7 +50,7 @@ function InvoiceList() {
     useEffect(() => {
       handleResize();
       getSetOrders();
-      
+      getAndSetCartCount();
       return () => {
         window.removeEventListener('resize', handleResize);
       };
@@ -92,7 +101,7 @@ function InvoiceList() {
     
     </div>
 
-    {isDesktop?<Footer></Footer>:<MobileFooter></MobileFooter>}
+    {isDesktop?<Footer></Footer>:<MobileFooter cartCount={cartCount}></MobileFooter>}
     
     
 </div>

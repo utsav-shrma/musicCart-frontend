@@ -28,7 +28,7 @@ function MobileFooter({cartCount}) {
       </div>
 
 <div className={styles.navigation}>
-{ (currentLinkAddress==='/cart'||currentLinkAddress==='/checkout' )? <div className={styles.indicator}></div>:""}
+<div className={styles.indicator} style={{visibility:(currentLinkAddress==='/cart'||currentLinkAddress==='/checkout' )?"":"hidden"}}></div>
       <button  onClick={()=>{navigate('/cart')}} id={styles.cartContainer}>
        
         <img src={cartLogo}></img>

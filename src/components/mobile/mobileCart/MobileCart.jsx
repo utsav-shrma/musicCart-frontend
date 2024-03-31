@@ -4,7 +4,8 @@ import SearchBar from "../../searchBar/SearchBar";
 import MobileFooter from "../mobileFooter/MobileFooter";
 import BackArrow from "../backArrow/BackArrow";
 import { useNavigate } from "react-router-dom";
-import { getCart } from "../../../api/cart";
+import { getCart,getCartCount } from "../../../api/cart";
+
 function MobileCart() {
   const navigate = useNavigate();
   const [cart, setCart] = useState([]);
@@ -20,10 +21,18 @@ function MobileCart() {
   
     }
   };
+  const [cartCount,setCartCount]=useState(0);
+  
 
+  const getAndSetCartCount=async ()=>{
+      let response=await getCartCount();
+      if(response){
+        setCartCount(response.cartCount);
+      }
+  }
   useEffect(() => {
     getCartData();
- 
+    getAndSetCartCount();
   }, []);
 
   const handleQtyChange = (event, index) => {
@@ -116,7 +125,7 @@ function MobileCart() {
         </div>
       </div>
 
-      <MobileFooter></MobileFooter>
+      <MobileFooter cartCount={cartCount}></MobileFooter>
     </div>
   );
 }

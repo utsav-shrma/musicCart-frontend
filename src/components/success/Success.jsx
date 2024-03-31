@@ -1,10 +1,36 @@
-import React from 'react'
+import React,{useEffect,useState} from 'react'
 import styles from './Success.module.css'
 import Footer from '../footer/Footer'
 import logo from '../../assets/images/musicArtLogo.png'
 import confetti from '../../assets/images/confetti.png'
 import { useNavigate } from 'react-router-dom'
+import MobileFooter from '../mobile/mobileFooter/MobileFooter'
 function Success() {
+  const [isDesktop, setIsDesktop] = useState(true);
+  
+  const handleResize=()=>{
+    
+    window.addEventListener("resize", () => setIsDesktop(window.innerWidth>breakpoint));
+    const breakpoint = 750;
+    const width=window.innerWidth;
+    if(width>breakpoint){
+      setIsDesktop(true);
+    }
+    else{
+      setIsDesktop(false);
+    }
+   
+
+  }
+  
+    useEffect(() => {
+      handleResize();
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+      
+    }, []);
+
 
   const navigate=useNavigate();
   return (
@@ -21,8 +47,8 @@ function Success() {
         <p className={styles.message}>You  will be receiving a confirmation email with order details</p>
         <button onClick={()=>{navigate('/');}}> Go back to Home page </button>
       </div>
-
-      <Footer></Footer>
+      {isDesktop?<Footer></Footer>:<MobileFooter cartCount={0}></MobileFooter>}
+      
     </div>
   )
 }

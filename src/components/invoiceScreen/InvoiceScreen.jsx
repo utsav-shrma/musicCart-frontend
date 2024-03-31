@@ -11,13 +11,22 @@ import Heading from "../heading/Heading";
 import MobileFooter from "../mobile/mobileFooter/MobileFooter";
 import { getOrderbyId } from '../../api/order';
 import { useParams } from 'react-router';
+import { getCartCount } from '../../api/cart';
 function InvoiceScreen() {
     const userName = localStorage.getItem("userName");
     const [isDesktop, setIsDesktop] = useState(true);
     const params=useParams();
     const id=params.id;
     const [order,setOrder]=useState({});
+    const [cartCount,setCartCount]=useState(0);
+  
 
+  const getAndSetCartCount=async ()=>{
+      let response=await getCartCount();
+      if(response){
+        setCartCount(response.cartCount);
+      }
+  }
     const getAndSetOrder =async ()=>{
             let response=await getOrderbyId(id);
             if(response){
@@ -44,6 +53,7 @@ function InvoiceScreen() {
       useEffect(() => {
         handleResize();
         getAndSetOrder(id);
+        getAndSetCartCount();
         return () => {
           window.removeEventListener('resize', handleResize);
         };
@@ -61,7 +71,7 @@ function InvoiceScreen() {
           {order.cart?<CheckoutForm isInvoice={true} cart={order.cart} totalAmount={order.orderPrice} order={{address:order.address,mode:order.mode}}  ></CheckoutForm>:""}
         </div>
   
-        {isDesktop?<Footer></Footer>:<MobileFooter></MobileFooter>}
+        {isDesktop?<Footer></Footer>:<MobileFooter cartCount={cartCount}></MobileFooter>}
       </div>
     );
 }

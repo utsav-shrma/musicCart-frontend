@@ -10,6 +10,7 @@ import BackArrow from "../mobile/backArrow/BackArrow";
 import Heading from "../heading/Heading";
 import MobileFooter from "../mobile/mobileFooter/MobileFooter";
 import { useLocation ,useNavigate} from 'react-router-dom';
+import { getCartCount } from "../../api/cart";
 function CheckoutScreen() {
   const userName = localStorage.getItem("userName");
   const [isDesktop, setIsDesktop] = useState(true);
@@ -23,7 +24,15 @@ function CheckoutScreen() {
     console.log(cart, totalAmount);
     }
     
+    const [cartCount,setCartCount]=useState(0);
   
+
+    const getAndSetCartCount=async ()=>{
+        let response=await getCartCount();
+        if(response){
+          setCartCount(response.cartCount);
+        }
+    }
 
   const handleResize=()=>{
     
@@ -42,6 +51,7 @@ function CheckoutScreen() {
   
     useEffect(() => {
       handleResize();
+      getAndSetCartCount();
       return () => {
         window.removeEventListener('resize', handleResize);
       };
@@ -59,7 +69,7 @@ function CheckoutScreen() {
         <CheckoutForm cart={cart} totalAmount={totalAmount}></CheckoutForm>
       </div>
 
-      {isDesktop?<Footer></Footer>:<MobileFooter></MobileFooter>}
+      {isDesktop?<Footer></Footer>:<MobileFooter cartCount={cartCount}></MobileFooter>}
     </div>
   );
 }
