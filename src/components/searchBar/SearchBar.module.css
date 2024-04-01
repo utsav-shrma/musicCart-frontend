@@ -8,12 +8,12 @@
 }
 
 .searchContainer{
-    border: 3px solid #C8C8C8;
+    border: 2px solid #C8C8C8;
     width: 90vw;
 
 
 border-radius: 48px ;
-border: 3px 0px 0px 0px;
+
 display: flex;
 align-items: center;
 background: white;
@@ -25,23 +25,21 @@ background: white;
     display: flex;
     flex:2;
     margin-right:20px;
-    height: 30px;
+    height: 20px;
     align-items: center;
     border-style: none;
 
     font-family: Roboto;
-font-size: 20.55px;
+font-size: 15.55px;
 font-weight: 400;
-line-height: 39.31px;
 text-align: left;
    
 }
 
 .searchInput::placeholder{
     font-family: Roboto;
-font-size: 20.55px;
+font-size: 15.55px;
 font-weight: 400;
-line-height: 39.31px;
 text-align: left;
 
 }
@@ -49,11 +47,11 @@ text-align: left;
 .searchButton{
     border-style: none;
     background-color: white;
-    margin: 10px;
+    margin: 5px;
 }
 
 .searchIcon{
-    width: 30px;
+    width: 20px;
 }
 
 input:focus{

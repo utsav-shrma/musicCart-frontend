@@ -24,9 +24,9 @@ overflow-x: hidden;
 
 .backButton {
   font-family: Roboto;
-  font-size: 20.13px;
+  font-size: 15.13px;
   font-weight: 500;
-  line-height: 32.96px;
+  
   text-align: left;
   color: white;
   background: #2e0052;
@@ -48,7 +48,7 @@ overflow-x: hidden;
 
 .invoicesContainer h1 {
   font-family: Roboto;
-  font-size: 35.83px;
+  font-size: 30.83px;
   font-weight: 700;
   line-height: 46.68px;
 }
@@ -84,8 +84,8 @@ overflow-x: hidden;
   color: #797979;
 }
 .left img {
-  width: 70px;
-  height: 70px;
+  width: 40px;
+  height: 40px;
   margin-inline-end: 10px;
 }
 
@@ -97,16 +97,16 @@ overflow-x: hidden;
 
 .invoicesContainer button {
   font-family: Roboto;
-  font-size: 20.13px;
+  font-size: 15.13px;
   font-weight: 500;
-  line-height: 32.96px;
+ 
   text-align: left;
   color: white;
   background: #2e0052;
   border-style: none;
   border-radius: 10px;
   padding: 5px;
-  padding-inline: 50px;
+  padding-inline: 30px;
 }
 
 .invoiceHeading {
