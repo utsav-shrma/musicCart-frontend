@@ -58,7 +58,7 @@ function DesktopProduct({product}) {
       <HomeHeader></HomeHeader>
       <div className={styles.middleContainer}>
       <Context.Provider value={{ cartCount,userName,productName }}>
-      <LogoHeader currScreen={product.name}></LogoHeader>
+      <LogoHeader showCart={true} currScreen={product.name}></LogoHeader>
       </Context.Provider>
 
         <BackButton></BackButton>

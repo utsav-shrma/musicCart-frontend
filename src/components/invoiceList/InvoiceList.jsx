@@ -67,7 +67,7 @@ function InvoiceList() {
     <div className={styles.middleContainer}>
       
       {isDesktop?<Context.Provider value={{ userName }}>
-      <LogoHeader currScreen={'Invoices'} showUserLogo={false}></LogoHeader>
+      <LogoHeader currScreen={'Invoices'} showCart={true} showUserLogo={false}></LogoHeader>
       </Context.Provider>:""}
     
       {isDesktop? <div className={styles.backButtonContainer}>

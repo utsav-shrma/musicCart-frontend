@@ -83,7 +83,7 @@ function ProductList() {
   return (
     <div className={styles.container}>
        <Context.Provider value={{ cartCount,userName }}>
-      <LogoHeader showCart={localStorage.getItem("token")}></LogoHeader>
+      <LogoHeader showCart={true}></LogoHeader>
       </Context.Provider>
       {localStorage.getItem("token")?<Feedback></Feedback>:""}
       

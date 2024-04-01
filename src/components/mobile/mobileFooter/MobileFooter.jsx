@@ -5,6 +5,7 @@ import cartLogo from "../../../assets/icons/mobileCart.png";
 import homeIcon from "../../../assets/icons/homeIcon.png";
 import accountIcon from "../../../assets/icons/accountIcon.png";
 import footerInvoice from '../../../assets/icons/footerInvoice.png'
+import loginWarn from '../../../assets/icons/loginWarn.png'
 
 
 function MobileFooter({cartCount}) {
@@ -12,8 +13,10 @@ function MobileFooter({cartCount}) {
   const navigate=useNavigate();
   const currentLinkAddress = location.pathname;
   const handleLogout=()=>{
-    localStorage.removeItem("token");
-    localStorage.removeItem("userName");
+    if(localStorage.getItem("token")){
+      localStorage.removeItem("token");
+      localStorage.removeItem("userName");
+    }
     navigate("/login");
   }
   return (
@@ -49,8 +52,8 @@ function MobileFooter({cartCount}) {
       {/* <div className={styles.indicator}></div> */}
       <button onClick={handleLogout}>
         
-        <img src={accountIcon}></img>
-        <p>Logout</p>
+        <img src={localStorage.getItem("token")?accountIcon:loginWarn}></img>
+        <p>{localStorage.getItem("token")?'Logout':'Login'}</p>
       </button>
     </div>
     </div>

@@ -2,7 +2,14 @@ import React from 'react'
 import styles from './HomeHeader.module.css'
 import phone from '../../../assets/icons/phoneIcon.png'
 import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 function HomeHeader() {
+  const navigate=useNavigate();
+  const handleLogout=()=>{
+    localStorage.removeItem("token");
+    localStorage.removeItem("userName");
+    navigate("/login");
+  }
   return (
     <div className={styles.container}>
       <div className={styles.innerContainer}>
@@ -15,7 +22,7 @@ function HomeHeader() {
       </div>
 
       <div className={styles.innerContainer}>
-        {localStorage.getItem("token")?"":<div className={styles.links}>
+        {localStorage.getItem("token")? <button onClick={handleLogout} className={styles.logoutButton} > Logout  </button>:<div className={styles.links}>
         <Link  className={styles.textFont} to={'/login'}> Login  </Link>
         <p className={styles.textFont}>&nbsp;|&nbsp; </p>
         <Link  className={styles.textFont} to={'/register'}> Sign In </Link>

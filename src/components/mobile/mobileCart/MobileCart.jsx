@@ -84,12 +84,13 @@ function MobileCart() {
                         {product.inventory > 0 ? "In Stock" : "Out of Stock"}
                       </p>
                       <select
+                      className={styles.qtyDrop}
                         value={info.qty}
                         onChange={() => {
                           handleQtyChange(event, index);
                         }}
                       >
-                        {Array.from({ length: product.inventory }).map(
+                        {Array.from({ length: info.qty>8?info.qty:8}).map(
                           (i, selectIndex) => {
                             return (
                               <option key={selectIndex} value={selectIndex + 1}>

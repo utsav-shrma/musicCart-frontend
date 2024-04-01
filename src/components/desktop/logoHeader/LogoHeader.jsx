@@ -39,7 +39,7 @@ function LogoHeader({showCart=true,currScreen,showUserLogo=true}) {
 
         <div className={styles.cartContainer}>
           {showCart?<button onClick={handleCart} className={styles.cartButton}>
-            <img src={cartLogo}></img> &nbsp;View Cart &nbsp;{cartCount}
+            <img src={cartLogo}></img> &nbsp;View Cart &nbsp;{cartCount===0?"":cartCount}
           </button>:""}
           {/* {" "} */}
           {/**to be updated */}

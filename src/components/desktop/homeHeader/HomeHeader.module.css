@@ -36,6 +36,19 @@ text-decoration: none;
     align-items: center;
     
   }
+
+  .logoutButton{
+    font-family: Roboto;
+font-size: 18px;
+font-weight: 500;
+line-height: 21.09px;
+text-align: left;
+text-decoration: none;
+    color: white;
+    background: #2e0052;
+    border-style: none;
+
+  }
   
   @media screen and (max-width: 750px) {
     .container {
