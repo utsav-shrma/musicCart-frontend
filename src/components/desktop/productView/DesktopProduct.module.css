@@ -274,6 +274,10 @@ margin:5px;
     margin-block: 5px;
 }
 
+/* .descOverflow{
+    height: 50vh;
+    overflow: auto;
+} */
 
 /* .feedbackStickyContainer {
     position: sticky;

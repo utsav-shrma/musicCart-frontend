@@ -33,6 +33,7 @@
 
 .productImage {
   width: 250px;
+  
   position: absolute;
 }
 .addToCartButton {

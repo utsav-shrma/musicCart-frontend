@@ -10,7 +10,7 @@
     min-height: 300px;
 }
 
-@media screen and (max-width:650px) {
+@media screen and (max-width:750px) {
     .productGridContainer{
         display: grid;
         align-items: center;

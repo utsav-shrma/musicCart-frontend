@@ -14,18 +14,18 @@
     /* background-color: green; */
     margin-bottom: 20px;
 }
-.down{
-    /* background-color: blue; */
-}
+
 
 .mainImage{
     width: 30vw;
+    height: 30vw;
     border: 3px solid #000000;
     border-radius: 16px;
 }
 
 .subImage{
     width: 9vw;
+    height: 9vw;
     border: 3px solid #000000;
     border-radius: 16px;
 }

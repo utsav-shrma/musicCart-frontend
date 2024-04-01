@@ -98,7 +98,10 @@ function DesktopProduct({product}) {
             <p className={styles.productDesc}>
                 
               About this item  </p>
-              <div className={styles.productDesc}dangerouslySetInnerHTML={{ __html: product.description }} />
+              <div className={styles.descOverflow}>
+                <div className={styles.productDesc}dangerouslySetInnerHTML={{ __html: product.description }} />
+              </div>
+              
               
              
                   
