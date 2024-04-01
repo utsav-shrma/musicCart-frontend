@@ -12,6 +12,7 @@ import MobileFooter from "../mobile/mobileFooter/MobileFooter";
 import { getOrderbyId } from '../../api/order';
 import { useParams } from 'react-router';
 import { getCartCount } from '../../api/cart';
+import { Link,useNavigate } from 'react-router-dom';
 function InvoiceScreen() {
     const userName = localStorage.getItem("userName");
     const [isDesktop, setIsDesktop] = useState(true);
@@ -19,7 +20,7 @@ function InvoiceScreen() {
     const id=params.id;
     const [order,setOrder]=useState({});
     const [cartCount,setCartCount]=useState(0);
-  
+    const navigate=useNavigate();
 
   const getAndSetCartCount=async ()=>{
       let response=await getCartCount();
@@ -31,6 +32,9 @@ function InvoiceScreen() {
             let response=await getOrderbyId(id);
             if(response){
                 setOrder(response);
+            }
+            else{
+                navigate("/404");
             }
     }
     
@@ -65,7 +69,7 @@ function InvoiceScreen() {
         {isDesktop?<HomeHeader></HomeHeader>:<Heading></Heading>}
         <div className={styles.middleContainer}>
          {isDesktop? <Context.Provider value={{ userName }}>
-            <LogoHeader showCart={false} currScreen={"Checkout"} />
+            <LogoHeader showCart={false} currScreen={"Invoice"} />
           </Context.Provider>:""}
           {isDesktop?<BackButton></BackButton>:<BackArrow link={"/invoice"}></BackArrow>}
           {order.cart?<CheckoutForm isInvoice={true} cart={order.cart} totalAmount={order.orderPrice} order={{address:order.address,mode:order.mode}}  ></CheckoutForm>:""}

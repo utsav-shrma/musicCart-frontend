@@ -58,7 +58,7 @@ function Cart() {
 
         <div className={styles.middleContainer}>
         <Context.Provider value={{ userName }}>
-      <LogoHeader></LogoHeader>
+      <LogoHeader currScreen={'Cart'}></LogoHeader>
       </Context.Provider>
       <BackButton></BackButton>
         <div className={styles.cartContainer}>

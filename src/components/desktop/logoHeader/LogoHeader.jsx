@@ -5,7 +5,7 @@ import cartLogo from "../../../assets/icons/cartLogo.png";
 import * as Popover from '@radix-ui/react-popover';
 import { useContext } from 'react';
 import { Context } from '../../../context';
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Link } from "react-router-dom";
 function LogoHeader({showCart=true,currScreen,showUserLogo=true}) {
     const navigate=useNavigate();
     const handleLogout=()=>{
@@ -34,7 +34,7 @@ function LogoHeader({showCart=true,currScreen,showUserLogo=true}) {
             <p className={styles.heading}>Musicart</p>
           </div>
             {/* add invoice g=here when user is logged in*/}
-          <p className={styles.homeLink}>Home {currScreen?`/ ${currScreen}`:""}</p>
+          <p className={styles.homeLink}>Home {window.location.pathname==='/'?<Link className={styles.homeLink} to={"/invoice"}>Invoices</Link>:""}{currScreen?`/ ${currScreen}`:""}</p>
         </div>
 
         <div className={styles.cartContainer}>
