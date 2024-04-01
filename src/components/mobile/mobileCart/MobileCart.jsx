@@ -66,6 +66,7 @@ function MobileCart() {
       <div className={styles.middleContainer}>
         <BackArrow link={"/"}></BackArrow>
         {cart.length>0? <div className={styles.overflowContainer}>
+        <div className={styles.cartMainContainer}>
           <div className={styles.cartContainer}>
             {cart.map((info, index) => {
               let product = info.productId;
@@ -115,6 +116,7 @@ function MobileCart() {
               <p className={styles.total}>Total</p>
               <p className={styles.amount}>₹{cartTotalAmount}</p>
             </div>
+          </div>
           </div>
 
           <hr></hr>

@@ -35,7 +35,7 @@
   width: 95vw;
   border: 0.5px solid #000000;
 }
-.cartContainer {
+.cartMainContainer{
   display: flex;
   background: #dbdbdb;
   flex-direction: column;
@@ -43,8 +43,15 @@
   margin-block-end: 10px;
   overflow: auto;
   align-items: center;
+}
+.cartContainer {
+  width: 50vw;
   
  
+}
+.cart{
+  display: flex;
+  
 }
 .image {
   width: 162px;
@@ -143,9 +150,7 @@
   text-align: center;
 }
 
-.cart{
-    display: flex;
-}
+
 
 .priceContainer{
     display: flex;
@@ -199,3 +204,17 @@ overflow: scroll;
     
   }
 }
+
+@media screen and (max-width:600px) {
+  
+    .cartContainer {
+      width: 70vw;
+      
+     
+    }
+ 
+    
+  
+  
+}
+

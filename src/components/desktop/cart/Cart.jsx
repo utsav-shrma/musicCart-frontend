@@ -85,12 +85,12 @@ function Cart() {
                                           <p className={styles.cartInfoDetail}>{product.inventory>0?"In Stock":"Out of Stock"}</p>
                                           </div>
                                    
-                                          <div className={styles.headingDetails}>
+                                          <div className={styles.priceDetails}>
                                           <p className={styles.cartInfoHeading}>Price</p>
                                           <p className={styles.cartInfoDetail}>₹{product.price}</p>
                                           </div>
       
-                                          <div className={styles.headingDetails}>
+                                          <div className={styles.priceDetails}>
                                           <p className={styles.cartInfoHeading}>Qty</p>
                                           {/* <p className={styles.cartInfoDetail}>{info.qty}</p> */}
                                           <div  className={styles.qtyDropContainer}>
@@ -102,7 +102,7 @@ function Cart() {
                                           </div>
                                           </div>
       
-                                          <div className={styles.headingDetails}>
+                                          <div className={styles.priceDetails}>
                                           <p className={styles.cartInfoHeading}>Total</p>
                                           <p className={styles.cartInfoDetail}>₹{totalPrice}</p>
                                           </div>
