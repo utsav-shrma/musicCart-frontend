@@ -54,6 +54,7 @@ function MobileCart() {
         updatedCart[index].qty = newQty;
         return updatedCart;
       });
+      setCartCount(response.cartCount);
       setCartTotalAmount(cartTotalAmount + (newQty - prevQty) * productPrice);
     }
   };
