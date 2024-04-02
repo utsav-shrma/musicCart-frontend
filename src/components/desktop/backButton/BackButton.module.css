@@ -4,16 +4,16 @@
 
 .backButton{
     font-family: Roboto;
-font-size: 20.13px;
+font-size: 17.13px;
 font-weight: 500;
-line-height: 32.96px;
+padding: 7px;
 text-align: left;
 color: white;
 background: #2E0052;
 border-style: none;
-padding: 5px;
-border-radius: 14px;
-padding-inline: 20px;
+padding: 7px;
+border-radius: 10px;
+padding-inline: 30px;
 display: flex;
 align-items: center;
 justify-content: center;

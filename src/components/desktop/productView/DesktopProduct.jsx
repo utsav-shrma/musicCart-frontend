@@ -64,7 +64,7 @@ function DesktopProduct({product}) {
         <BackButton></BackButton>
 
         <div className={styles.backButtonContainer}>
-          <p className={styles.productHeading}>
+          <p className={styles.productHeadingSummary}>
             {product.summary}
           </p>
         </div>

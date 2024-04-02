@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-block: 10px;
+    
     
 }
 
@@ -23,7 +23,7 @@ margin-block: 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-block-end:5px;
+    
 }
 .logo{
     width: 43px;
@@ -87,7 +87,7 @@ height: 30px;
 }
 
 .homeLink{
-    margin: 20px;
+    margin-inline-start: 20px;
     font-family: Roboto;
 font-size: 20.41px;
 font-weight: 400;

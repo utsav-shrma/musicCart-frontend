@@ -29,9 +29,9 @@ function Success() {
     useEffect(() => {
       handleResize();
       console.log(location.state);
-      if(location.state==null){
-          navigate('/404');
-       }
+      // if(location.state==null){
+      //     navigate('/404');
+      //  }
        
       return () => {
         window.removeEventListener('resize', handleResize);
