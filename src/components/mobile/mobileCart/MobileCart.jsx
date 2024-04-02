@@ -106,15 +106,17 @@ function MobileCart() {
                 </div>
               );
             })}
-
+  <div className={styles.bottomDetails}>
             <div className={styles.priceContainer}>
               <p className={styles.total}>Convinience Fee</p>
               <p className={styles.amount}>₹{convenienceFee}</p>
             </div>
+            
 
             <div className={styles.priceContainer}>
               <p className={styles.total}>Total</p>
               <p className={styles.amount}>₹{cartTotalAmount}</p>
+            </div>
             </div>
           </div>
           </div>

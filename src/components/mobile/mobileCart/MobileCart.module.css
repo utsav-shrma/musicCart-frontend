@@ -154,8 +154,8 @@
 
 .priceContainer{
     display: flex;
-    justify-content: space-between;
-    width: 80vw;
+    justify-content: space-between ;
+    width: 50vw;
     align-items: center;
     margin-block: 5px;
 }
@@ -190,7 +190,10 @@ overflow: scroll;
 
 
 }
+.bottomDetails{
+  margin-bottom: 20px;
 
+}
 @media screen and (max-height:800px) {
   .middleContainer {
     display: flex;
