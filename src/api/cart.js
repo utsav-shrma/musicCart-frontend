@@ -27,6 +27,28 @@ export const addProductToCart = async (productId, qty) => {
   }
 };
 
+export const updateCart = async (productId, qty) => {
+    
+  try {
+      let token= localStorage.getItem("token");
+      let axiosConfig = {
+          headers: {
+            Authorization: token,
+          },
+        };
+
+  const reqUrl = `${baseUrl}/cart`;
+  
+  const reqPayload = { productId, qty };
+  const response = await axios.put(reqUrl, reqPayload, axiosConfig);
+  if (response) {
+    return response.data; 
+  }
+} catch (error) {
+  console.log(error);
+}
+};
+
 
 export const getCart = async () => {
     try {

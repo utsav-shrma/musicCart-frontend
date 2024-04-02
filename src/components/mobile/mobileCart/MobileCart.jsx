@@ -5,6 +5,7 @@ import MobileFooter from "../mobileFooter/MobileFooter";
 import BackArrow from "../backArrow/BackArrow";
 import { useNavigate } from "react-router-dom";
 import { getCart,getCartCount } from "../../../api/cart";
+import { updateCart } from "../../../api/cart";
 
 function MobileCart() {
   const navigate = useNavigate();
@@ -35,18 +36,29 @@ function MobileCart() {
     getAndSetCartCount();
   }, []);
 
-  const handleQtyChange = (event, index) => {
+  const setAndUpdateCart = async (productId, qty) => {
+    let response = await updateCart(productId, qty);
+    return response;
+  };
+  const handleQtyChange = async (event, index) => {
     let prevQty = cart[index].qty;
     let newQty = Number(event.target.value);
+    let productId = cart[index].productId._id;
     let productPrice = cart[index].productId.price;
-    setCart((prevCart) => {
-      const updatedCart = [...prevCart];
-      updatedCart[index].qty = newQty;
-      return updatedCart;
-    });
-
-    setCartTotalAmount(cartTotalAmount + (newQty - prevQty) * productPrice);
+    console.log(productId, newQty);
+    let response = await setAndUpdateCart(productId, newQty);
+    console.log(response);
+    if (response) {
+      setCart((prevCart) => {
+        const updatedCart = [...prevCart];
+        updatedCart[index].qty = newQty;
+        return updatedCart;
+      });
+      setCartTotalAmount(cartTotalAmount + (newQty - prevQty) * productPrice);
+    }
   };
+
+  
 
   // const submitSearch = (text) => {
   //   navigate('/', { state: { search:text} });
